@@ -156,7 +156,7 @@ namespace JustShogunLibSamples
     }
 }
 
-// Output Mothod
+// Output Method
 // 123
 // Hello
 // [Hello 1]
@@ -164,6 +164,7 @@ namespace JustShogunLibSamples
 // 1, 2, 3, 4, 5
 // 2, 3, 4, 5, 6
 ```
+
 **Events**
 ```csharp
 using System;
@@ -189,6 +190,36 @@ namespace JustShogunLibSamples
         }
     }
 }
+```
+
+**Enumerable**
+```csharp
+using System;
+using System.Collections.Generic;
+using ShogunLib.LINQ;
+
+namespace JustShogunLibSamples
+{
+    public class EnumerableSamples
+    {
+        public void Method()
+        {
+            IEnumerable<int> list = new List<int> { 1, 2, 3, 4, 5 };
+            IEnumerable<int> newList = new List<int>();
+
+            newList = list.ForEach(x => ++x);
+
+            list.ForEach(x => Console.Write("{0} ", x));
+
+            Console.WriteLine();
+
+            newList.ForEach(x => Console.Write("{0} ", x));
+        }
+    }
+}
+// Output Method
+// 1 2 3 4 5
+// 2 3 4 5 6
 ```
 
 ## License ##
