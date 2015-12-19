@@ -164,6 +164,32 @@ namespace JustShogunLibSamples
 // 1, 2, 3, 4, 5
 // 2, 3, 4, 5, 6
 ```
+**Events**
+```csharp
+using System;
+using ShogunLib.Events;
+
+namespace JustShogunLibSamples
+{
+    public class EventsSamples
+    {
+        public event EventHandler<EventArgs> Event1;
+
+        public event EventHandler<SimpleEventArgs<Tuple<string, int>>> Event2;
+
+        public void Method()
+        {
+            // Safe raise of Event1 with your own EventArgs instance
+            Event1.Raise<EventArgs>(this, new EventArgs());
+
+            // Safe raise of Event2 with SimpleEventArgs<Tuple<string, int>> instance
+            // and you don't need to provide SimpleEventArgs instace, 
+            // code will do it insted of you.
+            Event2.Raise(this, new Tuple<string, int>("Hello", 10));
+        }
+    }
+}
+```
 
 ## License ##
 

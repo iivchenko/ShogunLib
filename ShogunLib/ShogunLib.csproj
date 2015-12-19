@@ -40,6 +40,8 @@
     <CodeAnalysisRuleSet>..\Items\Shogun.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Events\EventExtensions.cs" />
+    <Compile Include="Events\SimpleEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Unit.cs" />
     <Compile Include="Units.cs" />
