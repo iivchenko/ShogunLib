@@ -1,4 +1,6 @@
-# ShogunLib #
+# ShogunLib
+
+[![NuGet downloads](https://img.shields.io/badge/nuget-v%200.1-green.svg)](https://www.nuget.org/packages/ShogunLib.dll)
 
 Set of libraries with some sort of everyday functionality like 
 * extension of LINQ
