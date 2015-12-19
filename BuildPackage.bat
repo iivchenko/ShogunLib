@@ -1,0 +1,1 @@
+Items\nuget.exe pack Items\PackageProj\ShogunLib.nuspec
