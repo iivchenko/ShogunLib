@@ -26,7 +26,7 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <DocumentationFile>bin\Debug\ShogunLib.XML</DocumentationFile>
     <RunCodeAnalysis>true</RunCodeAnalysis>
-    <CodeAnalysisRuleSet>..\Items\Shogun.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\ShogunLib.Items\CA.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -38,7 +38,7 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <DocumentationFile>bin\Release\ShogunLib.XML</DocumentationFile>
     <RunCodeAnalysis>true</RunCodeAnalysis>
-    <CodeAnalysisRuleSet>..\Items\Shogun.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\ShogunLib.Items\CA.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Events\EventExtensions.cs" />
@@ -57,7 +57,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <CodeAnalysisDictionary Include="..\Items\CodeAnalysisDictionary.xml" />
+    <CodeAnalysisDictionary Include="..\ShogunLib.Items\CADictionary.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -7,6 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShogunLib", "ShogunLib\Shog
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShogunLib.Tests", "ShogunLib.Tests\ShogunLib.Tests.csproj", "{7D0E01F6-7363-4706-B7FE-B102A458C2C9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShogunLib.Items", "ShogunLib.Items", "{03841F79-36A3-4D2F-923A-86484700680E}"
+	ProjectSection(SolutionItems) = preProject
+		ShogunLib.Items\CA.ruleset = ShogunLib.Items\CA.ruleset
+		ShogunLib.Items\CA.Tests.ruleset = ShogunLib.Items\CA.Tests.ruleset
+		ShogunLib.Items\CADictionary.xml = ShogunLib.Items\CADictionary.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

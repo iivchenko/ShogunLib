@@ -25,7 +25,7 @@
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <DocumentationFile>bin\Debug\ShogunLib.Tests.XML</DocumentationFile>
     <RunCodeAnalysis>true</RunCodeAnalysis>
-    <CodeAnalysisRuleSet>..\Items\Shogun.Tests.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\ShogunLib.Items\CA.Tests.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,7 +37,7 @@
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <DocumentationFile>bin\Release\ShogunLib.Tests.XML</DocumentationFile>
     <RunCodeAnalysis>true</RunCodeAnalysis>
-    <CodeAnalysisRuleSet>..\Items\Shogun.Tests.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\ShogunLib.Items\CA.Tests.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="nunit.framework">
@@ -62,7 +62,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <CodeAnalysisDictionary Include="..\Items\CodeAnalysisDictionary.xml" />
+    <CodeAnalysisDictionary Include="..\ShogunLib.Items\CADictionary.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
