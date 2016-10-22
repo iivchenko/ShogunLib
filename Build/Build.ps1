@@ -3,6 +3,13 @@ $shogunLib = "..\Src\ShogunLib\ShogunLib.csproj"
 $nuget = ".\nuget.exe"
 $msb = "C:\Program Files (x86)\MSBuild\12.0\Bin\MSBuild.exe"
 
+function Download-Nuget
+{
+    $url = "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe"
+        
+    Invoke-WebRequest -Uri $url -OutFile $nuget
+}
+
 function Restore-Packages
 {
     param($solution)
@@ -28,6 +35,8 @@ function Build-Package
 
     & $nuget pack $project  -properties Configuration=Release -OutputDirectory "bin"
 }
+
+Download-Nuget
 
 Restore-Packages -Solution $solution
 
