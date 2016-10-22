@@ -1,6 +1,6 @@
 ﻿$solution = "..\Src\ShogunLib.sln"
 $shogunLib = "..\Src\ShogunLib\ShogunLib.csproj"
-$bin = "bin"
+$bin = "..\bin"
 $nuget = "$bin\nuget.exe"
 $msb = "C:\Program Files (x86)\MSBuild\12.0\Bin\MSBuild.exe"
 
@@ -29,10 +29,10 @@ function Build-Package
 {
     param($project)
 
-    & $nuget pack $project  -properties Configuration=Release -OutputDirectory $bin
+    & $nuget pack $project -properties Configuration=Release -OutputDirectory $bin
 }
 
-if (-not(Test-Path -Path $bin)) 
+if (-not(Test-Path -Path $bin))
 {
     New-Item $bin -ItemType Directory
 }
