@@ -1,1 +1,0 @@
-nuget.exe pack PackageProj\ShogunLib.nuspec
