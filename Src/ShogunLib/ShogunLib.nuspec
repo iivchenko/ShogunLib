@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$owners$</owners>
+    <licenseUrl>https://raw.githubusercontent.com/iivchenko/ShogunLib/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/iivchenko/ShogunLib</projectUrl>
+    <iconUrl>https://github.com/iivchenko/ShogunLib/blob/master/Src/ShogunLib/Package/PackageIco.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>
+	v0.1.3
+	[Add] LINQ extension methods
+	[Add] ForEach for IEnumerable
+	[Add] May be monad
+	[Add] Event extensions
+	[Add] Safe event raise
+	[Add] String Extensions
+	[Add] Units helper methods
+	</releaseNotes>
+    <copyright>Copyright (c) 2016 by Shogun</copyright>
+    <tags>
+		Validate Maybe LINQ Extensions String Events
+	</tags>
+  </metadata>
+</package>
