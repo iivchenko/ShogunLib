@@ -36,7 +36,7 @@ namespace ShogunLib
         /// <returns>String representation of the <paramref name="source"/></returns>
         public static string AsString<T>(this T source, Func<T, string> transformer)
         {
-            transformer.ValidateNull("transformer");
+            transformer.ValidateNull(nameof(transformer));
 
             return transformer(source);
         }
@@ -51,7 +51,7 @@ namespace ShogunLib
         /// <returns>String representation of the <paramref name="source"/></returns>
         public static string AsString<T>(this T source, string template, params Func<T, object>[] selector)
         {
-            template.ValidateStringEmpty("template");
+            template.ValidateStringEmpty(nameof(template));
 
             var args = selector.Length > 0
                 ? new object[selector.Length]
@@ -76,8 +76,8 @@ namespace ShogunLib
         /// <returns>A string that consists of the members of <paramref name="source"/> delimited by the <paramref name="separator"/> string. If <paramref name="source"/> has no members, the method returns <see cref="System.String.Empty"/>.</returns>
         public static string JoinString<T>(this IEnumerable<T> source, string separator)
         {
-            source.ValidateNull("source");
-            separator.ValidateNull("separator");
+            source.ValidateNull(nameof(source));
+            separator.ValidateNull(nameof(separator));
 
             return string.Join(separator, source);
         }
@@ -92,9 +92,9 @@ namespace ShogunLib
         /// <returns>A string that consists of the members of <paramref name="source"/> delimited by the <paramref name="separator"/> string. If <paramref name="source"/> has no members, the method returns <see cref="System.String.Empty"/>.</returns>
         public static string JoinString<T>(this IEnumerable<T> source, string separator, Func<T, object> selector)
         {
-            source.ValidateNull("source");
-            separator.ValidateNull("separator");
-            selector.ValidateNull("selector");
+            source.ValidateNull(nameof(source));
+            separator.ValidateNull(nameof(separator));
+            selector.ValidateNull(nameof(selector));
 
             return string.Join(separator, source.Select(selector));
         }

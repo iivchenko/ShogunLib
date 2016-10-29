@@ -23,8 +23,8 @@ namespace ShogunLib.LINQ
         /// <param name="action">A function to affect each element of the sequence.</param>
         public static void ForEach<T>(this IEnumerable<T> source, Action<T> action)
         {
-            source.ValidateNull("source");
-            action.ValidateNull("action");
+            source.ValidateNull(nameof(source));
+            action.ValidateNull(nameof(action));
 
             foreach (var item in source)
             {
@@ -41,8 +41,8 @@ namespace ShogunLib.LINQ
         /// <returns>New sequence with processed elements.</returns>
         public static IEnumerable<T> ForEach<T>(this IEnumerable<T> source, Func<T, T> action)
         {
-            source.ValidateNull("source");
-            action.ValidateNull("action");
+            source.ValidateNull(nameof(source));
+            action.ValidateNull(nameof(action));
 
             var collection = new Collection<T>();
 
