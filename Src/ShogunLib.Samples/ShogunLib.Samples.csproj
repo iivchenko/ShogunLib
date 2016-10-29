@@ -46,6 +46,7 @@
     <Compile Include="EventsSamples.cs" />
     <Compile Include="MaybeSamples.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Readme.cs" />
     <Compile Include="UnitsSamples.cs" />
     <Compile Include="UtilitiesSamples.cs" />
     <Compile Include="ValidateSamples.cs" />
