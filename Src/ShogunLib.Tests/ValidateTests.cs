@@ -17,7 +17,7 @@ namespace ShogunLib.Tests
         {
             var parameter = new object();
 
-            parameter.ValidateNull("parameter");
+            parameter.ValidateNull(nameof(parameter));
         }
 
         [Test]
@@ -25,7 +25,7 @@ namespace ShogunLib.Tests
         {
             var parameter = (object)null;
 
-            Assert.Throws<ArgumentNullException>(() => parameter.ValidateNull("parameter"));
+            Assert.Throws<ArgumentNullException>(() => parameter.ValidateNull(nameof(parameter)));
         }
 
         [Test]
@@ -41,7 +41,7 @@ namespace ShogunLib.Tests
         {
             var parameter = "Hello world";
 
-            parameter.ValidateStringEmpty("parameter");
+            parameter.ValidateStringEmpty(nameof(parameter));
         }
 
         [Test]
@@ -49,14 +49,14 @@ namespace ShogunLib.Tests
         {
             string parameter = null;
 
-            Assert.Throws<ArgumentNullException>(() => parameter.ValidateStringEmpty("parameter"));
+            Assert.Throws<ArgumentNullException>(() => parameter.ValidateStringEmpty(nameof(parameter)));
         }
 
         [TestCase("")]
         [TestCase("   ")]
         public void StringEmpty_StringIsEmpty_Throws(string input)
         {
-            Assert.Throws<ArgumentException>(() => input.ValidateStringEmpty("input"));
+            Assert.Throws<ArgumentException>(() => input.ValidateStringEmpty(nameof(input)));
         }
 
         [Test]

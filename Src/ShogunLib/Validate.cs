@@ -25,7 +25,7 @@ namespace ShogunLib
         {
             if (parameterName == null)
             {
-                throw new ArgumentNullException("parameterName");
+                throw new ArgumentNullException(nameof(parameterName));
             }
 
             if (input == null)
