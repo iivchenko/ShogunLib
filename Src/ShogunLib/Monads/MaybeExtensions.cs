@@ -20,7 +20,6 @@ namespace ShogunLib.Monads
         /// <param name="source">The value to be wrapped.</param>
         /// <returns>Wrapped <paramref name="source"/> to Maybe monad.</returns>
         public static Maybe<TSource> ToMaybe<TSource>(this TSource source)
-            where TSource : class
         {
             return new Maybe<TSource>(source);
         }
@@ -32,7 +31,6 @@ namespace ShogunLib.Monads
         /// <param name="result">The value to be unwrapped.</param>
         /// <returns>Unwrapped <see cref="Maybe{T}.Value"/> of <see cref="Maybe{T}"/> monad.</returns>
         public static TResult Return<TResult>(this Maybe<TResult> result)
-            where TResult : class
         {
             return result.HasValue
                 ? result.Value
