@@ -2,7 +2,7 @@
 $shogunLib = "..\Src\ShogunLib\ShogunLib.csproj"
 $bin = "..\bin"
 $nuget = "$bin\nuget.exe"
-$msb = "C:\Program Files (x86)\MSBuild\12.0\Bin\MSBuild.exe"
+$msb = "C:\Program Files (x86)\MSBuild\14.0\Bin\MSBuild.exe"
 
 function Download-Nuget
 {
