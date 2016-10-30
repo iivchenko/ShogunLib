@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Events\EventExtensions.cs" />
     <Compile Include="Events\SimpleEventArgs.cs" />
+    <Compile Include="LINQ\CollectionExtensions.cs" />
     <Compile Include="LINQ\EnumerableExtensions.cs" />
     <Compile Include="Monads\Maybe.cs" />
     <Compile Include="Monads\MaybeExtensions.cs" />
