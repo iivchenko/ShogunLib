@@ -5,6 +5,7 @@
 // <email>iivchenko@live.com</email>
 
 using System;
+using System.Threading;
 
 namespace ShogunLib.Events
 {
@@ -37,7 +38,7 @@ namespace ShogunLib.Events
         public static void Raise<TEventArgs>(this EventHandler<TEventArgs> handler, object sender, TEventArgs args)
             where TEventArgs : EventArgs
         {
-            var temp = handler;
+            var temp = Volatile.Read(ref handler);
 
             if (temp != null)
             {
