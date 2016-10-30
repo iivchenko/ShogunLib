@@ -11,7 +11,7 @@ using ShogunLib.LINQ;
 
 namespace ShogunLib.Samples
 {
-    [TestFixture]
+    [TestFixture(Category = Constants.Category)]
     public sealed class EnumerableExtensionsSamples
     {
         [Test]

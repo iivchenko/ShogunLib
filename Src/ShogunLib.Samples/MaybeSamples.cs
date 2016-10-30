@@ -10,7 +10,7 @@ using ShogunLib.Monads;
 
 namespace ShogunLib.Samples
 {
-    [TestFixture]
+    [TestFixture(Category = Constants.Category)]
     // To avoid dozens of null checks use Maybe =)
     public sealed class MaybeSamples
     {
