@@ -6,7 +6,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using NUnit.Framework;
 using ShogunLib.LINQ;
 
@@ -16,7 +15,7 @@ namespace ShogunLib.Tests.LINQ
     public class EnumerableExtensionsTests
     {
         [Test]
-        public void ForEach_WithoutResult_SourceIsNull_Throws()
+        public void ForEach_SourceIsNull_Throws()
         {
             IEnumerable<int> source = null;
 
@@ -24,49 +23,24 @@ namespace ShogunLib.Tests.LINQ
         }
 
         [Test]
-        public void ForEach_WithResult_SourceIsNull_Throws()
+        public void ForEach_ActionIsNull_Throws()
         {
-            IEnumerable<int> source = null;
-
-            Assert.Throws<ArgumentNullException>(() => source.ForEach(x => { return x; }));
-        }
-
-        [Test]
-        public void ForEach_WithoutResult_ActionIsNull_Throws()
-        {
-            IEnumerable<int> source = new List<int>();
+            IEnumerable<int> source = new List<int> { 1, 2, 3 };
 
             Assert.Throws<ArgumentNullException>(() => source.ForEach((Action<int>)null));
         }
 
         [Test]
-        public void ForEach_WithResult_FuncIsNull_Throws()
+        public void ForEach_Test()
         {
-            IEnumerable<int> source = new List<int>();
+            const int expecteSum = 15;
 
-            Assert.Throws<ArgumentNullException>(() => source.ForEach((Func<int, int>)null));
-        }
-
-        [Test]
-        public void ForEach_WithoutResult_Test()
-        {
-            var counter = 1;
+            var sum = 0;
             IEnumerable<int> source = new List<int> { 1, 2, 3, 4, 5 };
 
-            source.ForEach(x => Assert.AreEqual(counter++, x));
-        }
+            source.ForEach(x => sum += x);
 
-        [Test]
-        public void ForEach_WithResult_Test()
-        {
-            IEnumerable<int> source = new List<int> { 1, 2, 3, 4, 5 };
-
-            var actual = source.ForEach(x => ++x);
-
-            for (var i = 0; i < actual.Count(); i++)
-            {
-                Assert.AreEqual(source.ElementAt(i) + 1, actual.ElementAt(i));
-            }
+            Assert.AreEqual(expecteSum, sum);
         }
     }
 }
