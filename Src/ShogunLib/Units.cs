@@ -6,6 +6,7 @@
 
 using System;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 
 namespace ShogunLib
 {
@@ -70,6 +71,7 @@ namespace ShogunLib
             return new Unit(unit, workValue);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static void ValidateLessThanZero(long value)
         {
             if (value < 0)

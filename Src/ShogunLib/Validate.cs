@@ -5,6 +5,7 @@
 // <email>iivchenko@live.com</email>
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace ShogunLib
 {
@@ -20,6 +21,7 @@ namespace ShogunLib
         /// <param name="input">Object that is under validation.</param>
         /// <param name="parameterName">Name of the <paramref name="input"/> variable/parameter. Can't be NULL.</param>
         /// <exception cref="ArgumentNullException">If <paramref name="input"/> or <paramref name="parameterName"/> is NULL</exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void ValidateNull<T>(this T input, string parameterName) 
             where T : class 
         {
@@ -41,6 +43,7 @@ namespace ShogunLib
         /// <param name="parameterName">Name of the <paramref name="input"/> variable/parameter. Can't be NULL.</param>
         /// <exception cref="ArgumentNullException">If <paramref name="input"/> or <paramref name="parameterName"/> is NULL.</exception>
         /// <exception cref="ArgumentException">If <paramref name="input"/> is <see cref="string.Empty"/> or whitespaces.</exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void ValidateStringEmpty(this string input, string parameterName)
         {
             ValidateNull(input, parameterName);
