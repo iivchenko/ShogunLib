@@ -3,7 +3,9 @@
 [![Build](https://ci.appveyor.com/api/projects/status/3xfkxtnkrts1x06q/branch/master?svg=true)](https://ci.appveyor.com/project/iivchenko/shogunlib) [![NuGet downloads](https://img.shields.io/badge/nuget-v%200.1.3-brightgreen.svg)](https://www.nuget.org/packages/ShogunLib.dll)
 
 Set of libraries with some sort of everyday functionality like 
-* [Extension of LINQ](https://github.com/iivchenko/ShogunLib/wiki/Enumerable)
+* [Extension of LINQ](https://github.com/iivchenko/ShogunLib/wiki/LINQ)
+  * [Enumerable](https://github.com/iivchenko/ShogunLib/wiki/Enumerable)
+  * [Collection](https://github.com/iivchenko/ShogunLib/wiki/Collection)
 * [Maybe monad](https://github.com/iivchenko/ShogunLib/wiki/Maybe)
 * [Event extensions](https://github.com/iivchenko/ShogunLib/wiki/Events)
 * [Units convertor](https://github.com/iivchenko/ShogunLib/wiki/Units)
