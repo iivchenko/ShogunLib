@@ -5,7 +5,6 @@
 // <email>iivchenko@live.com</email>
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
 using ShogunLib.Events;
@@ -14,7 +13,7 @@ using ShogunLib.Monads;
 
 namespace ShogunLib.Samples
 {
-    [TestFixture]
+    [TestFixture(Category = Constants.Category)]
     public sealed class Readme
     {
         public event EventHandler<SimpleEventArgs<string>> NameChanged;

@@ -6,11 +6,10 @@
 
 using System;
 using NUnit.Framework;
-using NUnit.Framework.Constraints;
 
 namespace ShogunLib.Samples
 {
-    [TestFixture]
+    [TestFixture(Category = Constants.Category)]
     public sealed class ValidateSamples
     {
         [TestCase(null, null, null, "", 0)]

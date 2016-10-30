@@ -42,6 +42,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
     <Compile Include="EnumerableExtensionsSamples.cs" />
     <Compile Include="EventsSamples.cs" />
     <Compile Include="MaybeSamples.cs" />

@@ -10,7 +10,7 @@ using ShogunLib.Events;
 
 namespace ShogunLib.Samples
 {
-    [TestFixture]
+    [TestFixture(Category = Constants.Category)]
     public sealed class EventsSamples
     {
         public event EventHandler<EventArgs> Event1;
