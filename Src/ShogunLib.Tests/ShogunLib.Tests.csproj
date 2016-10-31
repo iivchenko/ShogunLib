@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Events\EventExtensionsTests.cs" />
+    <Compile Include="LINQ\CollectionExtensionsTests.cs" />
     <Compile Include="LINQ\EnumerableExtensionsTests.cs" />
     <Compile Include="Monads\MaybeExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
