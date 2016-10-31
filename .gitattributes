@@ -1,0 +1,11 @@
+* text eol=crlf
+
+*.cs text
+*.csproj text
+*.config text
+*.sln text
+*.nuspec
+*.ps1
+
+*.png binary
+*.jpg binary
