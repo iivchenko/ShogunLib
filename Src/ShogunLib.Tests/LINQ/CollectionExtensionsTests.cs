@@ -36,14 +36,14 @@ namespace ShogunLib.Tests.LINQ
         [Test]
         public void AddRange_Test()
         {
-            const int expectedCount = 3;
+            const int ExpectedCount = 3;
 
             var source = new Collection<int>();
             var values = new List<int> { 1, 2, 3 };
 
             source.AddRange(values);
 
-            Assert.AreEqual(expectedCount, source.Count);
+            Assert.AreEqual(ExpectedCount, source.Count);
         }
     }
 }

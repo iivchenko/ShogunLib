@@ -36,14 +36,14 @@ namespace ShogunLib.Tests.LINQ
         [Test]
         public void ForEach_Test()
         {
-            const int expecteSum = 15;
+            const int ExpecteSum = 15;
 
             var sum = 0;
             IEnumerable<int> source = new List<int> { 1, 2, 3, 4, 5 };
 
             source.ForEach(x => sum += x);
 
-            Assert.AreEqual(expecteSum, sum);
+            Assert.AreEqual(ExpecteSum, sum);
         }
 
         [Test]
@@ -75,11 +75,10 @@ namespace ShogunLib.Tests.LINQ
             CollectionAssert.AreEqual(source, source2);
         }
 
-
         [Test]
         public void Apply_ApplyAction_ActionApplied()
         {
-            const int expecteDiff = 3;
+            const int ExpecteDiff = 3;
 
             var source = new List<Item> { new Item(1), new Item(2), new Item(3) };
             var sum1 = 0;
@@ -91,7 +90,7 @@ namespace ShogunLib.Tests.LINQ
                 .Apply(x => sum2 += x.Value)
                 .ToList();
 
-            Assert.AreEqual(expecteDiff, sum2 - sum1);
+            Assert.AreEqual(ExpecteDiff, sum2 - sum1);
         }
 
         private class Item
