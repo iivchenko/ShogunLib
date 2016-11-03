@@ -47,6 +47,16 @@
     <Compile Include="LINQ\EnumerableExtensions.cs" />
     <Compile Include="Monads\Maybe.cs" />
     <Compile Include="Monads\MaybeExtensions.cs" />
+    <Compile Include="Patterns\ChainOfResponsibility\Can.cs" />
+    <Compile Include="Patterns\ChainOfResponsibility\ChainBuilder.cs" />
+    <Compile Include="Patterns\ChainOfResponsibility\Chain.cs" />
+    <Compile Include="Patterns\ChainOfResponsibility\ICan.cs" />
+    <Compile Include="Patterns\ChainOfResponsibility\IChainBuilder.cs" />
+    <Compile Include="Patterns\ChainOfResponsibility\IDo.cs" />
+    <Compile Include="Patterns\ChainOfResponsibility\IChain.cs" />
+    <Compile Include="Patterns\ChainOfResponsibility\ILink.cs" />
+    <Compile Include="Patterns\ChainOfResponsibility\Do.cs" />
+    <Compile Include="Patterns\ChainOfResponsibility\Link.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Unit.cs" />
     <Compile Include="Units.cs" />
