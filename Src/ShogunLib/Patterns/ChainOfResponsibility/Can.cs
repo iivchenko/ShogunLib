@@ -20,6 +20,8 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
         public Can(Func<bool> cando)
         {
+            cando.ValidateNull(nameof(cando));
+
             _cando = cando;
         }
 
@@ -29,7 +31,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>true - link can handle; false - link can't handle</returns>
         public bool Cando()
         {
-            throw new NotImplementedException();
+            return _cando();
         }
     }
 
@@ -47,6 +49,8 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
         public Can(Func<T1, bool> cando)
         {
+            cando.ValidateNull(nameof(cando));
+
             _cando = cando;
         }
 
@@ -57,7 +61,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>true - link can handle; false - link can't handle</returns>
         public bool Cando(T1 t1)
         {
-            throw new NotImplementedException();
+            return _cando(t1);
         }
     }
 
@@ -76,6 +80,8 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
         public Can(Func<T1, T2, bool> cando)
         {
+            cando.ValidateNull(nameof(cando));
+
             _cando = cando;
         }
 
@@ -87,7 +93,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>true - link can handle; false - link can't handle</returns>
         public bool Cando(T1 t1, T2 t2)
         {
-            throw new NotImplementedException();
+            return _cando(t1, t2);
         }
     }
 
@@ -107,6 +113,8 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
         public Can(Func<T1, T2, T3, bool> cando)
         {
+            cando.ValidateNull(nameof(cando));
+
             _cando = cando;
         }
 
@@ -119,7 +127,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>true - link can handle; false - link can't handle</returns>
         public bool Cando(T1 t1, T2 t2, T3 t3)
         {
-            throw new NotImplementedException();
+            return _cando(t1, t2, t3);
         }
     }
 
@@ -140,6 +148,8 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
         public Can(Func<T1, T2, T3, T4, bool> cando)
         {
+            cando.ValidateNull(nameof(cando));
+
             _cando = cando;
         }
 
@@ -153,7 +163,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>true - link can handle; false - link can't handle</returns>
         public bool Cando(T1 t1, T2 t2, T3 t3, T4 t4)
         {
-            throw new NotImplementedException();
+            return _cando(t1, t2, t3, t4);
         }
     }
 
@@ -175,6 +185,8 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
         public Can(Func<T1, T2, T3, T4, T5, bool> cando)
         {
+            cando.ValidateNull(nameof(cando));
+
             _cando = cando;
         }
 
@@ -189,7 +201,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>true - link can handle; false - link can't handle</returns>
         public bool Cando(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5)
         {
-            throw new NotImplementedException();
+            return _cando(t1, t2, t3, t4, t5);
         }
     }
 }
