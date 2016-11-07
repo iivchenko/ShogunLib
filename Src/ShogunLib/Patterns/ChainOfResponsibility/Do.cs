@@ -23,6 +23,8 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="voidDo">Link action.</param>
         public VoidDo(Action voidDo)
         {
+            voidDo.ValidateNull(nameof(voidDo));
+
             _voidDo = voidDo;
         }
 
@@ -31,7 +33,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// </summary>
         public void Do()
         {
-            throw new NotImplementedException();
+            _voidDo();
         }
     }
 
@@ -49,6 +51,8 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="voidDo">Link action.</param>
         public VoidDo(Action<T1> voidDo)
         {
+            voidDo.ValidateNull(nameof(voidDo));
+
             _voidDo = voidDo;
         }
 
@@ -58,7 +62,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="t1">First input parameter of a link.</param>
         public void Do(T1 t1)
         {
-            throw new NotImplementedException();
+            _voidDo(t1);
         }
     }
 
@@ -77,6 +81,8 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="voidDo">Link action.</param>
         public VoidDo(Action<T1, T2> voidDo)
         {
+            voidDo.ValidateNull(nameof(voidDo));
+
             _voidDo = voidDo;
         }
 
@@ -87,7 +93,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="t2">Second input parameter of a link.</param>
         public void Do(T1 t1, T2 t2)
         {
-            throw new NotImplementedException();
+            _voidDo(t1, t2);
         }
     }
 
@@ -107,6 +113,8 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="voidDo">Link action.</param>
         public VoidDo(Action<T1, T2, T3> voidDo)
         {
+            voidDo.ValidateNull(nameof(voidDo));
+
             _voidDo = voidDo;
         }
 
@@ -118,7 +126,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="t3">Third input parameter of a link.</param>
         public void Do(T1 t1, T2 t2, T3 t3)
         {
-            throw new NotImplementedException();
+            _voidDo(t1, t2, t3);
         }
     }
 
@@ -139,6 +147,8 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="voidDo">Link action.</param>
         public VoidDo(Action<T1, T2, T3, T4> voidDo)
         {
+            voidDo.ValidateNull(nameof(voidDo));
+
             _voidDo = voidDo;
         }
 
@@ -151,7 +161,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="t4">Fourth input parameter of a link.</param>
         public void Do(T1 t1, T2 t2, T3 t3, T4 t4)
         {
-            throw new NotImplementedException();
+            _voidDo(t1, t2, t3, t4);
         }
     }
 
@@ -173,6 +183,8 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="voidDo">Link action.</param>
         public VoidDo(Action<T1, T2, T3, T4, T5> voidDo)
         {
+            voidDo.ValidateNull(nameof(voidDo));
+
             _voidDo = voidDo;
         }
 
@@ -186,7 +198,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="t5">Fifth input parameter of a link.</param>
         public void Do(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5)
         {
-            throw new NotImplementedException();
+            _voidDo(t1, t2, t3, t4, t5);
         }
     }
 
@@ -208,6 +220,8 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="resultDo">Link action.</param>
         public ResultDo(Func<TResult> resultDo)
         {
+            resultDo.ValidateNull(nameof(resultDo));
+
             _resultDo = resultDo;
         }
 
@@ -217,7 +231,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Result of a link action.</returns>
         public TResult Do()
         {
-            throw new NotImplementedException();
+            return _resultDo();
         }
     }
 
@@ -236,6 +250,8 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="resultDo">Link action.</param>
         public ResultDo(Func<T1, TResult> resultDo)
         {
+            resultDo.ValidateNull(nameof(resultDo));
+
             _resultDo = resultDo;
         }
 
@@ -246,7 +262,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Result of a link action.</returns>
         public TResult Do(T1 t1)
         {
-            throw new NotImplementedException();
+            return _resultDo(t1);
         }
     }
 
@@ -266,6 +282,8 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="resultDo">Link action.</param>
         public ResultDo(Func<T1, T2, TResult> resultDo)
         {
+            resultDo.ValidateNull(nameof(resultDo));
+
             _resultDo = resultDo;
         }
 
@@ -277,7 +295,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Result of a link action.</returns>
         public TResult Do(T1 t1, T2 t2)
         {
-            throw new NotImplementedException();
+            return _resultDo(t1, t2);
         }
     }
 
@@ -298,6 +316,8 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="resultDo">Link action.</param>
         public ResultDo(Func<T1, T2, T3, TResult> resultDo)
         {
+            resultDo.ValidateNull(nameof(resultDo));
+
             _resultDo = resultDo;
         }
 
@@ -310,7 +330,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Result of a link action.</returns>
         public TResult Do(T1 t1, T2 t2, T3 t3)
         {
-            throw new NotImplementedException();
+            return _resultDo(t1, t2, t3);
         }
     }
 
@@ -332,6 +352,8 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="resultDo">Link action.</param>
         public ResultDo(Func<T1, T2, T3, T4, TResult> resultDo)
         {
+            resultDo.ValidateNull(nameof(resultDo));
+
             _resultDo = resultDo;
         }
 
@@ -345,7 +367,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Result of a link action.</returns>
         public TResult Do(T1 t1, T2 t2, T3 t3, T4 t4)
         {
-            throw new NotImplementedException();
+            return _resultDo(t1, t2, t3, t4);
         }
     }
 
@@ -368,6 +390,8 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="resultDo">Link action.</param>
         public ResultDo(Func<T1, T2, T3, T4, T5, TResult> resultDo)
         {
+            resultDo.ValidateNull(nameof(resultDo));
+
             _resultDo = resultDo;
         }
 
@@ -382,7 +406,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Result of a link action.</returns>
         public TResult Do(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5)
         {
-            throw new NotImplementedException();
+            return _resultDo(t1, t2, t3, t4, t5);
         }
     }
 
