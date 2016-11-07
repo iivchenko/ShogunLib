@@ -65,5 +65,20 @@ namespace ShogunLib.Monads
                 action(source.Value);
             }
         }
+
+        /// <summary>
+        /// Apply <paramref name="action"/> to the Monad value if it exists.
+        /// </summary>
+        /// <typeparam name="TSource">Type of <paramref name="source"/> value.</typeparam>
+        /// <typeparam name="TResult">Type of result that action should return.</typeparam>
+        /// <param name="source">Maybe monad.</param>
+        /// <param name="action">Action to be applied to <paramref name="source"/> value.</param>
+        public static TResult Do<TSource, TResult>(this Maybe<TSource> source, Func<TSource, TResult> action)
+        {
+            return
+                source.HasValue
+                    ? action(source.Value)
+                    : default(TResult);
+        }
     }
 }
