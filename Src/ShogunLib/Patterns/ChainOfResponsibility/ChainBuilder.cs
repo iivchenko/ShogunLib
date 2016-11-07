@@ -34,7 +34,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IVoidChainBuilder Add(Func<bool> cando, Action voidDo)
         {
-            throw new NotImplementedException();
+            _links.Add(new VoidLink(cando, voidDo));
+
+            return this;
         }
 
         /// <summary>
@@ -44,7 +46,11 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IVoidChainBuilder Add(IVoidLink link)
         {
-            throw new NotImplementedException();
+            link.ValidateNull(nameof(link));
+
+            _links.Add(link);
+
+            return this;
         }
 
         /// <summary>
@@ -55,7 +61,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IVoidChainBuilder Add(ICan cando, IVoidDo voidDo)
         {
-            throw new NotImplementedException();
+            _links.Add(new VoidLink(cando, voidDo));
+
+            return this;
         }
 
         /// <summary>
@@ -64,7 +72,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>New chain.</returns>
         public IVoidChain Build()
         {
-            throw new NotImplementedException();
+            return new VoidChain(_links);
         }
     }
 
@@ -92,7 +100,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IVoidChainBuilder<T1> Add(Func<T1, bool> cando, Action<T1> voidDo)
         {
-            throw new NotImplementedException();
+            _links.Add(new VoidLink<T1>(cando, voidDo));
+
+            return this;
         }
 
         /// <summary>
@@ -102,7 +112,11 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IVoidChainBuilder<T1> Add(IVoidLink<T1> link)
         {
-            throw new NotImplementedException();
+            link.ValidateNull(nameof(link));
+
+            _links.Add(link);
+
+            return this;
         }
 
         /// <summary>
@@ -113,7 +127,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IVoidChainBuilder<T1> Add(ICan<T1> cando, IVoidDo<T1> voidDo)
         {
-            throw new NotImplementedException();
+            _links.Add(new VoidLink<T1>(cando, voidDo));
+
+            return this;
         }
 
         /// <summary>
@@ -122,7 +138,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>New chain.</returns>
         public IVoidChain<T1> Build()
         {
-            throw new NotImplementedException();
+            return new VoidChain<T1>(_links);
         }
     }
 
@@ -151,7 +167,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IVoidChainBuilder<T1, T2> Add(Func<T1, T2, bool> cando, Action<T1, T2> voidDo)
         {
-            throw new NotImplementedException();
+            _links.Add(new VoidLink<T1, T2>(cando, voidDo));
+
+            return this;
         }
 
         /// <summary>
@@ -161,7 +179,11 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IVoidChainBuilder<T1, T2> Add(IVoidLink<T1, T2> link)
         {
-            throw new NotImplementedException();
+            link.ValidateNull(nameof(link));
+
+            _links.Add(link);
+
+            return this;
         }
 
         /// <summary>
@@ -172,7 +194,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IVoidChainBuilder<T1, T2> Add(ICan<T1, T2> cando, IVoidDo<T1, T2> voidDo)
         {
-            throw new NotImplementedException();
+            _links.Add(new VoidLink<T1, T2>(cando, voidDo));
+
+            return this;
         }
 
         /// <summary>
@@ -181,7 +205,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>New chain.</returns>
         public IVoidChain<T1, T2> Build()
         {
-            throw new NotImplementedException();
+            return new VoidChain<T1, T2>(_links);
         }
     }
 
@@ -211,7 +235,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IVoidChainBuilder<T1, T2, T3> Add(Func<T1, T2, T3, bool> cando, Action<T1, T2, T3> voidDo)
         {
-            throw new NotImplementedException();
+            _links.Add(new VoidLink<T1, T2, T3>(cando, voidDo));
+
+            return this;
         }
 
         /// <summary>
@@ -221,7 +247,11 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IVoidChainBuilder<T1, T2, T3> Add(IVoidLink<T1, T2, T3> link)
         {
-            throw new NotImplementedException();
+            link.ValidateNull(nameof(link));
+
+            _links.Add(link);
+
+            return this;
         }
 
         /// <summary>
@@ -232,7 +262,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IVoidChainBuilder<T1, T2, T3> Add(ICan<T1, T2, T3> cando, IVoidDo<T1, T2, T3> voidDo)
         {
-            throw new NotImplementedException();
+            _links.Add(new VoidLink<T1, T2, T3>(cando, voidDo));
+
+            return this;
         }
 
         /// <summary>
@@ -241,7 +273,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>New chain.</returns>
         public IVoidChain<T1, T2, T3> Build()
         {
-            throw new NotImplementedException();
+            return new VoidChain<T1, T2, T3>(_links);
         }
     }
 
@@ -272,7 +304,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IVoidChainBuilder<T1, T2, T3, T4> Add(Func<T1, T2, T3, T4, bool> cando, Action<T1, T2, T3, T4> voidDo)
         {
-            throw new NotImplementedException();
+            _links.Add(new VoidLink<T1, T2, T3, T4>(cando, voidDo));
+
+            return this;
         }
 
         /// <summary>
@@ -282,7 +316,11 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IVoidChainBuilder<T1, T2, T3, T4> Add(IVoidLink<T1, T2, T3, T4> link)
         {
-            throw new NotImplementedException();
+            link.ValidateNull(nameof(link));
+
+            _links.Add(link);
+
+            return this;
         }
 
         /// <summary>
@@ -293,7 +331,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IVoidChainBuilder<T1, T2, T3, T4> Add(ICan<T1, T2, T3, T4> cando, IVoidDo<T1, T2, T3, T4> voidDo)
         {
-            throw new NotImplementedException();
+            _links.Add(new VoidLink<T1, T2, T3, T4>(cando, voidDo));
+
+            return this;
         }
 
         /// <summary>
@@ -302,7 +342,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>New chain.</returns>
         public IVoidChain<T1, T2, T3, T4> Build()
         {
-            throw new NotImplementedException();
+            return new VoidChain<T1, T2, T3, T4>(_links);
         }
     }
 
@@ -334,7 +374,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IVoidChainBuilder<T1, T2, T3, T4, T5> Add(Func<T1, T2, T3, T4, T5, bool> cando, Action<T1, T2, T3, T4, T5> voidDo)
         {
-            throw new NotImplementedException();
+            _links.Add(new VoidLink<T1, T2, T3, T4, T5>(cando, voidDo));
+
+            return this;
         }
 
         /// <summary>
@@ -344,7 +386,11 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IVoidChainBuilder<T1, T2, T3, T4, T5> Add(IVoidLink<T1, T2, T3, T4, T5> link)
         {
-            throw new NotImplementedException();
+            link.ValidateNull(nameof(link));
+
+            _links.Add(link);
+
+            return this;
         }
 
         /// <summary>
@@ -355,7 +401,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IVoidChainBuilder<T1, T2, T3, T4, T5> Add(ICan<T1, T2, T3, T4, T5> cando, IVoidDo<T1, T2, T3, T4, T5> voidDo)
         {
-            throw new NotImplementedException();
+            _links.Add(new VoidLink<T1, T2, T3, T4, T5>(cando, voidDo));
+
+            return this;
         }
 
         /// <summary>
@@ -364,7 +412,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>New chain.</returns>
         public IVoidChain<T1, T2, T3, T4, T5> Build()
         {
-            throw new NotImplementedException();
+            return new VoidChain<T1, T2, T3, T4, T5>(_links);
         }
     }
 
@@ -396,7 +444,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IResultChainBuilder<TResult> Add(Func<bool> cando, Func<TResult> resultDo)
         {
-            throw new NotImplementedException();
+            _links.Add(new ResultLink<TResult>(cando, resultDo));
+
+            return this;
         }
 
         /// <summary>
@@ -406,7 +456,11 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IResultChainBuilder<TResult> Add(IResultLink<TResult> link)
         {
-            throw new NotImplementedException();
+            link.ValidateNull(nameof(link));
+
+            _links.Add(link);
+
+            return this;
         }
 
         /// <summary>
@@ -417,7 +471,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IResultChainBuilder<TResult> Add(ICan cando, IResultDo<TResult> resultDo)
         {
-            throw new NotImplementedException();
+            _links.Add(new ResultLink<TResult>(cando, resultDo));
+
+            return this;
         }
 
         /// <summary>
@@ -426,7 +482,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>New chain.</returns>
         public IResultChain<TResult> Build()
         {
-            throw new NotImplementedException();
+            return new ResultChain<TResult>(_links);
         }
     }
 
@@ -455,7 +511,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IResultChainBuilder<T1, TResult> Add(Func<T1, bool> cando, Func<T1, TResult> resultDo)
         {
-            throw new NotImplementedException();
+            _links.Add(new ResultLink<T1, TResult>(cando, resultDo));
+
+            return this;
         }
 
         /// <summary>
@@ -465,7 +523,11 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IResultChainBuilder<T1, TResult> Add(IResultLink<T1, TResult> link)
         {
-            throw new NotImplementedException();
+            link.ValidateNull(nameof(link));
+
+            _links.Add(link);
+
+            return this;
         }
 
         /// <summary>
@@ -476,7 +538,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IResultChainBuilder<T1, TResult> Add(ICan<T1> cando, IResultDo<T1, TResult> resultDo)
         {
-            throw new NotImplementedException();
+            _links.Add(new ResultLink<T1, TResult>(cando, resultDo));
+
+            return this;
         }
 
         /// <summary>
@@ -485,7 +549,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>New chain.</returns>
         public IResultChain<T1, TResult> Build()
         {
-            throw new NotImplementedException();
+            return new ResultChain<T1, TResult>(_links);
         }
     }
 
@@ -515,7 +579,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IResultChainBuilder<T1, T2, TResult> Add(Func<T1, T2, bool> cando, Func<T1, T2, TResult> resultDo)
         {
-            throw new NotImplementedException();
+            _links.Add(new ResultLink<T1, T2, TResult>(cando, resultDo));
+
+            return this;
         }
 
         /// <summary>
@@ -525,7 +591,11 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IResultChainBuilder<T1, T2, TResult> Add(IResultLink<T1, T2, TResult> link)
         {
-            throw new NotImplementedException();
+            link.ValidateNull(nameof(link));
+
+            _links.Add(link);
+
+            return this;
         }
 
         /// <summary>
@@ -536,7 +606,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IResultChainBuilder<T1, T2, TResult> Add(ICan<T1, T2> cando, IResultDo<T1, T2, TResult> resultDo)
         {
-            throw new NotImplementedException();
+            _links.Add(new ResultLink<T1, T2, TResult>(cando, resultDo));
+
+            return this;
         }
 
         /// <summary>
@@ -545,7 +617,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>New chain.</returns>
         public IResultChain<T1, T2, TResult> Build()
         {
-            throw new NotImplementedException();
+            return new ResultChain<T1, T2, TResult>(_links);
         }
     }
 
@@ -576,7 +648,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IResultChainBuilder<T1, T2, T3, TResult> Add(Func<T1, T2, T3, bool> cando, Func<T1, T2, T3, TResult> resultDo)
         {
-            throw new NotImplementedException();
+            _links.Add(new ResultLink<T1, T2, T3, TResult>(cando, resultDo));
+
+            return this;
         }
 
         /// <summary>
@@ -586,7 +660,11 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IResultChainBuilder<T1, T2, T3, TResult> Add(IResultLink<T1, T2, T3, TResult> link)
         {
-            throw new NotImplementedException();
+            link.ValidateNull(nameof(link));
+
+            _links.Add(link);
+
+            return this;
         }
 
         /// <summary>
@@ -597,7 +675,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IResultChainBuilder<T1, T2, T3, TResult> Add(ICan<T1, T2, T3> cando, IResultDo<T1, T2, T3, TResult> resultDo)
         {
-            throw new NotImplementedException();
+            _links.Add(new ResultLink<T1, T2, T3, TResult>(cando, resultDo));
+
+            return this;
         }
 
         /// <summary>
@@ -606,7 +686,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>New chain.</returns>
         public IResultChain<T1, T2, T3, TResult> Build()
         {
-            throw new NotImplementedException();
+            return new ResultChain<T1, T2, T3, TResult>(_links);
         }
     }
 
@@ -638,7 +718,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IResultChainBuilder<T1, T2, T3, T4, TResult> Add(Func<T1, T2, T3, T4, bool> cando, Func<T1, T2, T3, T4, TResult> resultDo)
         {
-            throw new NotImplementedException();
+            _links.Add(new ResultLink<T1, T2, T3, T4, TResult>(cando, resultDo));
+
+            return this;
         }
 
         /// <summary>
@@ -648,7 +730,11 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IResultChainBuilder<T1, T2, T3, T4, TResult> Add(IResultLink<T1, T2, T3, T4, TResult> link)
         {
-            throw new NotImplementedException();
+            link.ValidateNull(nameof(link));
+
+            _links.Add(link);
+
+            return this;
         }
 
         /// <summary>
@@ -659,7 +745,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IResultChainBuilder<T1, T2, T3, T4, TResult> Add(ICan<T1, T2, T3, T4> cando, IResultDo<T1, T2, T3, T4, TResult> resultDo)
         {
-            throw new NotImplementedException();
+            _links.Add(new ResultLink<T1, T2, T3, T4, TResult>(cando, resultDo));
+
+            return this;
         }
 
         /// <summary>
@@ -668,7 +756,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>New chain.</returns>
         public IResultChain<T1, T2, T3, T4, TResult> Build()
         {
-            throw new NotImplementedException();
+            return new ResultChain<T1, T2, T3, T4, TResult>(_links);
         }
     }
 
@@ -701,7 +789,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IResultChainBuilder<T1, T2, T3, T4, T5, TResult> Add(Func<T1, T2, T3, T4, T5, bool> cando, Func<T1, T2, T3, T4, T5, TResult> resultDo)
         {
-            throw new NotImplementedException();
+            _links.Add(new ResultLink<T1, T2, T3, T4, T5, TResult>(cando, resultDo));
+
+            return this;
         }
 
         /// <summary>
@@ -711,7 +801,11 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IResultChainBuilder<T1, T2, T3, T4, T5, TResult> Add(IResultLink<T1, T2, T3, T4, T5, TResult> link)
         {
-            throw new NotImplementedException();
+            link.ValidateNull(nameof(link));
+
+            _links.Add(link);
+
+            return this;
         }
 
         /// <summary>
@@ -722,7 +816,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public IResultChainBuilder<T1, T2, T3, T4, T5, TResult> Add(ICan<T1, T2, T3, T4, T5> cando, IResultDo<T1, T2, T3, T4, T5, TResult> resultDo)
         {
-            throw new NotImplementedException();
+            _links.Add(new ResultLink<T1, T2, T3, T4, T5, TResult>(cando, resultDo));
+
+            return this;
         }
 
         /// <summary>
@@ -731,7 +827,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>New chain.</returns>
         public IResultChain<T1, T2, T3, T4, T5, TResult> Build()
         {
-            throw new NotImplementedException();
+            return new ResultChain<T1, T2, T3, T4, T5, TResult>(_links);
         }
     }
 
