@@ -48,7 +48,7 @@ namespace ShogunLib.Tests.Monads
 
         [TestCase(TestValue, true)]
         [TestCase((string)null, false)]
-        public void Do_Test(string input, bool expectedActionResult)
+        public void Do_Void_Test(string input, bool expectedActionResult)
         {
             var maybe = new Maybe<string>(input);
             var actualActionResult = false;
@@ -57,6 +57,25 @@ namespace ShogunLib.Tests.Monads
                 .Do(x => actualActionResult = true);
 
             Assert.AreEqual(expectedActionResult, actualActionResult);
+        }
+
+        [TestCase(TestValue, true, TestValue)]
+        [TestCase((string)null, false, null)]
+        public void Do_Result_Test(string input, bool expectedActionResult, string expectedReturnResult)
+        {
+            var maybe = new Maybe<string>(input);
+            var actualActionResult = false;
+
+            var returnResult =
+                maybe
+                    .Do(x =>
+                    {
+                        actualActionResult = true;
+                        return TestValue;
+                    });
+
+            Assert.AreEqual(expectedActionResult, actualActionResult);
+            Assert.AreEqual(expectedReturnResult, returnResult);
         }
     }
 }
