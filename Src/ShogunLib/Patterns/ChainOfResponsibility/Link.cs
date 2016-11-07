@@ -35,6 +35,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="voidDo">Link action.</param>
         public VoidLink(ICan cando, IVoidDo voidDo)
         {
+            cando.ValidateNull(nameof(cando));
+            voidDo.ValidateNull(nameof(voidDo));
+
             _cando = cando;
             _voidDo = voidDo;
         }
@@ -45,7 +48,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>true - link can handle; false - link can't handle</returns>
         public bool Cando()
         {
-            throw new NotImplementedException();
+            return _cando.Cando();
         }
 
         /// <summary>
@@ -53,7 +56,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// </summary>
         public void Do()
         {
-            throw new NotImplementedException();
+            _voidDo.Do();
         }
     }
 
@@ -83,6 +86,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="voidDo">Link action.</param>
         public VoidLink(ICan<T1> cando, IVoidDo<T1> voidDo)
         {
+            cando.ValidateNull(nameof(cando));
+            voidDo.ValidateNull(nameof(voidDo));
+
             _cando = cando;
             _voidDo = voidDo;
         }
@@ -94,7 +100,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>true - link can handle; false - link can't handle</returns>
         public bool Cando(T1 t1)
         {
-            throw new NotImplementedException();
+            return _cando.Cando(t1);
         }
 
         /// <summary>
@@ -103,7 +109,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="t1">First input parameter of a link.</param>
         public void Do(T1 t1)
         {
-            throw new NotImplementedException();
+            _voidDo.Do(t1);
         }
     }
 
@@ -134,6 +140,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="voidDo">Link action.</param>
         public VoidLink(ICan<T1, T2> cando, IVoidDo<T1, T2> voidDo)
         {
+            cando.ValidateNull(nameof(cando));
+            voidDo.ValidateNull(nameof(voidDo));
+
             _cando = cando;
             _voidDo = voidDo;
         }
@@ -146,7 +155,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>true - link can handle; false - link can't handle</returns>
         public bool Cando(T1 t1, T2 t2)
         {
-            throw new NotImplementedException();
+            return _cando.Cando(t1, t2);
         }
 
         /// <summary>
@@ -156,7 +165,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="t2">Second input parameter of a link.</param>
         public void Do(T1 t1, T2 t2)
         {
-            throw new NotImplementedException();
+            _voidDo.Do(t1, t2);
         }
     }
 
@@ -188,6 +197,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="voidDo">Link action.</param>
         public VoidLink(ICan<T1, T2, T3> cando, IVoidDo<T1, T2, T3> voidDo)
         {
+            cando.ValidateNull(nameof(cando));
+            voidDo.ValidateNull(nameof(voidDo));
+
             _cando = cando;
             _voidDo = voidDo;
         }
@@ -201,7 +213,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>true - link can handle; false - link can't handle</returns>
         public bool Cando(T1 t1, T2 t2, T3 t3)
         {
-            throw new NotImplementedException();
+            return _cando.Cando(t1, t2, t3);
         }
 
         /// <summary>
@@ -212,7 +224,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="t3">Third input parameter of a link.</param>
         public void Do(T1 t1, T2 t2, T3 t3)
         {
-            throw new NotImplementedException();
+            _voidDo.Do(t1, t2, t3);
         }
     }
 
@@ -245,6 +257,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="voidDo">Link action.</param>
         public VoidLink(ICan<T1, T2, T3, T4> cando, IVoidDo<T1, T2, T3, T4> voidDo)
         {
+            cando.ValidateNull(nameof(cando));
+            voidDo.ValidateNull(nameof(voidDo));
+
             _cando = cando;
             _voidDo = voidDo;
         }
@@ -259,7 +274,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>true - link can handle; false - link can't handle</returns>
         public bool Cando(T1 t1, T2 t2, T3 t3, T4 t4)
         {
-            throw new NotImplementedException();
+            return _cando.Cando(t1, t2, t3, t4);
         }
 
         /// <summary>
@@ -271,7 +286,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="t4">Fourth input parameter of a link.</param>
         public void Do(T1 t1, T2 t2, T3 t3, T4 t4)
         {
-            throw new NotImplementedException();
+            _voidDo.Do(t1, t2, t3, t4);
         }
     }
 
@@ -305,6 +320,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="voidDo">Link action.</param>
         public VoidLink(ICan<T1, T2, T3, T4, T5> cando, IVoidDo<T1, T2, T3, T4, T5> voidDo)
         {
+            cando.ValidateNull(nameof(cando));
+            voidDo.ValidateNull(nameof(voidDo));
+
             _cando = cando;
             _voidDo = voidDo;
         }
@@ -320,7 +338,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>true - link can handle; false - link can't handle</returns>
         public bool Cando(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5)
         {
-            throw new NotImplementedException();
+            return _cando.Cando(t1, t2, t3, t4, t5);
         }
 
         /// <summary>
@@ -333,7 +351,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="t5">Fifth input parameter of a link.</param>
         public void Do(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5)
         {
-            throw new NotImplementedException();
+           _voidDo.Do(t1, t2, t3, t4, t5);
         }
     }
 
@@ -367,6 +385,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="resultDo">Link action.</param>
         public ResultLink(ICan cando, IResultDo<TResult> resultDo)
         {
+            cando.ValidateNull(nameof(cando));
+            resultDo.ValidateNull(nameof(resultDo));
+
             _cando = cando;
             _resultDo = resultDo;
         }
@@ -377,7 +398,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>true - link can handle; false - link can't handle</returns>
         public bool Cando()
         {
-            throw new NotImplementedException();
+            return _cando.Cando();
         }
 
         /// <summary>
@@ -386,7 +407,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Result of a link action.</returns>
         public TResult Do()
         {
-            throw new NotImplementedException();
+            return _resultDo.Do();
         }
     }
 
@@ -417,6 +438,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="resultDo">Link action.</param>
         public ResultLink(ICan<T1> cando, IResultDo<T1, TResult> resultDo)
         {
+            cando.ValidateNull(nameof(cando));
+            resultDo.ValidateNull(nameof(resultDo));
+
             _cando = cando;
             _resultDo = resultDo;
         }
@@ -428,7 +452,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>true - link can handle; false - link can't handle</returns>
         public bool Cando(T1 t1)
         {
-            throw new NotImplementedException();
+            return _cando.Cando(t1);
         }
 
         /// <summary>
@@ -438,7 +462,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Result of a link action.</returns>
         public TResult Do(T1 t1)
         {
-            throw new NotImplementedException();
+            return _resultDo.Do(t1);
         }
     }
 
@@ -470,6 +494,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="resultDo">Link action.</param>
         public ResultLink(ICan<T1, T2> cando, IResultDo<T1, T2, TResult> resultDo)
         {
+            cando.ValidateNull(nameof(cando));
+            resultDo.ValidateNull(nameof(resultDo));
+
             _cando = cando;
             _resultDo = resultDo;
         }
@@ -482,7 +509,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>true - link can handle; false - link can't handle</returns>
         public bool Cando(T1 t1, T2 t2)
         {
-            throw new NotImplementedException();
+            return _cando.Cando(t1, t2);
         }
 
         /// <summary>
@@ -493,7 +520,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Result of a link action.</returns>
         public TResult Do(T1 t1, T2 t2)
         {
-            throw new NotImplementedException();
+            return _resultDo.Do(t1, t2);
         }
     }
 
@@ -526,6 +553,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="resultDo">Link action.</param>
         public ResultLink(ICan<T1, T2, T3> cando, IResultDo<T1, T2, T3, TResult> resultDo)
         {
+            cando.ValidateNull(nameof(cando));
+            resultDo.ValidateNull(nameof(resultDo));
+
             _cando = cando;
             _resultDo = resultDo;
         }
@@ -539,7 +569,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>true - link can handle; false - link can't handle</returns>
         public bool Cando(T1 t1, T2 t2, T3 t3)
         {
-            throw new NotImplementedException();
+            return _cando.Cando(t1, t2, t3);
         }
 
         /// <summary>
@@ -551,7 +581,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Result of a link action.</returns>
         public TResult Do(T1 t1, T2 t2, T3 t3)
         {
-            throw new NotImplementedException();
+            return _resultDo.Do(t1, t2, t3);
         }
     }
 
@@ -585,6 +615,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="resultDo">Link action.</param>
         public ResultLink(ICan<T1, T2, T3, T4> cando, IResultDo<T1, T2, T3, T4, TResult> resultDo)
         {
+            cando.ValidateNull(nameof(cando));
+            resultDo.ValidateNull(nameof(resultDo));
+
             _cando = cando;
             _resultDo = resultDo;
         }
@@ -599,7 +632,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>true - link can handle; false - link can't handle</returns>
         public bool Cando(T1 t1, T2 t2, T3 t3, T4 t4)
         {
-            throw new NotImplementedException();
+            return _cando.Cando(t1, t2, t3, t4);
         }
 
         /// <summary>
@@ -612,7 +645,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Result of a link action.</returns>
         public TResult Do(T1 t1, T2 t2, T3 t3, T4 t4)
         {
-            throw new NotImplementedException();
+            return _resultDo.Do(t1, t2, t3, t4);
         }
     }
 
@@ -647,6 +680,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="resultDo">Link action.</param>
         public ResultLink(ICan<T1, T2, T3, T4, T5> cando, IResultDo<T1, T2, T3, T4, T5, TResult> resultDo)
         {
+            cando.ValidateNull(nameof(cando));
+            resultDo.ValidateNull(nameof(resultDo));
+
             _cando = cando;
             _resultDo = resultDo;
         }
@@ -662,7 +698,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>true - link can handle; false - link can't handle</returns>
         public bool Cando(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5)
         {
-            throw new NotImplementedException();
+            return _cando.Cando(t1, t2, t3, t4, t5);
         }
 
         /// <summary>
@@ -676,7 +712,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Result of a link action.</returns>
         public TResult Do(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5)
         {
-            throw new NotImplementedException();
+            return _resultDo.Do(t1, t2, t3, t4, t5);
         }
     }
 
