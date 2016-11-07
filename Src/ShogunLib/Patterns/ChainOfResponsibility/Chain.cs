@@ -4,8 +4,9 @@
 // <author>Ivan Ivchenko</author>
 // <email>iivchenko@live.com</email>
 
-using System;
 using System.Collections.Generic;
+using System.Linq;
+using ShogunLib.Monads;
 
 namespace ShogunLib.Patterns.ChainOfResponsibility
 {
@@ -22,7 +23,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Chain builder</returns>
         public static IVoidChainBuilder CreateVoid()
         {
-            throw new NotImplementedException();
+            return new VoidChainBuilder();
         }
 
         /// <summary>
@@ -32,7 +33,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Chain builder</returns>
         public static IVoidChainBuilder<T1> CreateVoid<T1>()
         {
-            throw new NotImplementedException();
+            return new VoidChainBuilder<T1>();
         }
 
         /// <summary>
@@ -43,7 +44,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Chain builder</returns>
         public static IVoidChainBuilder<T1, T2> CreateVoid<T1, T2>()
         {
-            throw new NotImplementedException();
+            return new VoidChainBuilder<T1, T2>();
         }
 
         /// <summary>
@@ -55,7 +56,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Chain builder</returns>
         public static IVoidChainBuilder<T1, T2, T3> CreateVoid<T1, T2, T3>()
         {
-            throw new NotImplementedException();
+            return new VoidChainBuilder<T1, T2, T3>();
         }
 
         /// <summary>
@@ -68,7 +69,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Chain builder</returns>
         public static IVoidChainBuilder<T1, T2, T3, T4> CreateVoid<T1, T2, T3, T4>()
         {
-            throw new NotImplementedException();
+            return new VoidChainBuilder<T1, T2, T3, T4>();
         }
 
         /// <summary>
@@ -82,7 +83,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Chain builder</returns>
         public static IVoidChainBuilder<T1, T2, T3, T4, T5> CreateVoid<T1, T2, T3, T4, T5>()
         {
-            throw new NotImplementedException();
+            return new VoidChainBuilder<T1, T2, T3, T4, T5>();
         }
 
         #endregion
@@ -96,7 +97,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Chain builder</returns>
         public static IResultChainBuilder<TResult> CreateResult<TResult>()
         {
-            throw new NotImplementedException();
+            return new ResultChainBuilder<TResult>();
         }
 
         /// <summary>
@@ -107,7 +108,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Chain builder</returns>
         public static IResultChainBuilder<T1, TResult> CreateResult<T1, TResult>()
         {
-            throw new NotImplementedException();
+            return new ResultChainBuilder<T1, TResult>();
         }
 
         /// <summary>
@@ -119,7 +120,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Chain builder</returns>
         public static IResultChainBuilder<T1, T2, TResult> CreateResult<T1, T2, TResult>()
         {
-            throw new NotImplementedException();
+            return new ResultChainBuilder<T1, T2, TResult>();
         }
 
         /// <summary>
@@ -132,7 +133,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Chain builder</returns>
         public static IResultChainBuilder<T1, T2, T3, TResult> CreateResult<T1, T2, T3, TResult>()
         {
-            throw new NotImplementedException();
+            return new ResultChainBuilder<T1, T2, T3, TResult>();
         }
 
         /// <summary>
@@ -146,7 +147,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Chain builder</returns>
         public static IResultChainBuilder<T1, T2, T3, T4, TResult> CreateResult<T1, T2, T3, T4, TResult>()
         {
-            throw new NotImplementedException();
+            return new ResultChainBuilder<T1, T2, T3, T4, TResult>();
         }
 
         /// <summary>
@@ -161,7 +162,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Chain builder</returns>
         public static IResultChainBuilder<T1, T2, T3, T4, T5, TResult> CreateResult<T1, T2, T3, T4, T5, TResult>()
         {
-            throw new NotImplementedException();
+            return new ResultChainBuilder<T1, T2, T3, T4, T5, TResult>();
         }
 
         #endregion
@@ -192,7 +193,10 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// </summary>
         public void Execute()
         {
-            throw new NotImplementedException();
+            _links
+                .FirstOrDefault(link => link.Cando())
+                .ToMaybe()
+                .Do(x => x.Do());
         }
     }
 
@@ -221,7 +225,10 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="t1">First input parameter of a chain.</param>
         public void Execute(T1 t1)
         {
-            throw new NotImplementedException();
+            _links
+                .FirstOrDefault(link => link.Cando(t1))
+                .ToMaybe()
+                .Do(x => x.Do(t1));
         }
     }
 
@@ -252,7 +259,10 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="t2">Second input parameter of a chain.</param>
         public void Execute(T1 t1, T2 t2)
         {
-            throw new NotImplementedException();
+            _links
+                .FirstOrDefault(link => link.Cando(t1, t2))
+                .ToMaybe()
+                .Do(x => x.Do(t1, t2));
         }
     }
 
@@ -285,7 +295,10 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="t3">Third input parameter of a chain.</param>
         public void Execute(T1 t1, T2 t2, T3 t3)
         {
-            throw new NotImplementedException();
+            _links
+                .FirstOrDefault(link => link.Cando(t1, t2, t3))
+                .ToMaybe()
+                .Do(x => x.Do(t1, t2, t3));
         }
     }
 
@@ -320,7 +333,10 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="t4">Fourth input parameter of a chain.</param>
         public void Execute(T1 t1, T2 t2, T3 t3, T4 t4)
         {
-            throw new NotImplementedException();
+            _links
+                .FirstOrDefault(link => link.Cando(t1, t2, t3, t4))
+                .ToMaybe()
+                .Do(x => x.Do(t1, t2, t3, t4));
         }
     }
 
@@ -357,7 +373,10 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <param name="t5">Fifth input parameter of a chain.</param>
         public void Execute(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5)
         {
-            throw new NotImplementedException();
+            _links
+                .FirstOrDefault(link => link.Cando(t1, t2, t3, t4, t5))
+                .ToMaybe()
+                .Do(x => x.Do(t1, t2, t3, t4, t5));
         }
     }
 
@@ -390,7 +409,11 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Chain handling result.</returns>
         public TResult Execute()
         {
-            throw new NotImplementedException();
+            return
+                _links
+                    .FirstOrDefault(link => link.Cando())
+                    .ToMaybe()
+                    .Do(x => x.Do());
         }
     }
 
@@ -421,7 +444,11 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Chain handling result.</returns>
         public TResult Execute(T1 t1)
         {
-            throw new NotImplementedException();
+            return
+                _links
+                    .FirstOrDefault(link => link.Cando(t1))
+                    .ToMaybe()
+                    .Do(x => x.Do(t1));
         }
     }
 
@@ -454,7 +481,11 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Chain handling result.</returns>
         public TResult Execute(T1 t1, T2 t2)
         {
-            throw new NotImplementedException();
+            return
+                _links
+                    .FirstOrDefault(link => link.Cando(t1, t2))
+                    .ToMaybe()
+                    .Do(x => x.Do(t1, t2));
         }
     }
 
@@ -489,7 +520,11 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Chain handling result.</returns>
         public TResult Execute(T1 t1, T2 t2, T3 t3)
         {
-            throw new NotImplementedException();
+            return
+                _links
+                    .FirstOrDefault(link => link.Cando(t1, t2, t3))
+                    .ToMaybe()
+                    .Do(x => x.Do(t1, t2, t3));
         }
     }
 
@@ -526,7 +561,11 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Chain handling result.</returns>
         public TResult Execute(T1 t1, T2 t2, T3 t3, T4 t4)
         {
-            throw new NotImplementedException();
+            return
+                _links
+                    .FirstOrDefault(link => link.Cando(t1, t2, t3, t4))
+                    .ToMaybe()
+                    .Do(x => x.Do(t1, t2, t3, t4));
         }
     }
 
@@ -565,7 +604,11 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         /// <returns>Chain handling result.</returns>
         public TResult Execute(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5)
         {
-            throw new NotImplementedException();
+            return
+                _links
+                    .FirstOrDefault(link => link.Cando(t1, t2, t3, t4, t5))
+                    .ToMaybe()
+                    .Do(x => x.Do(t1, t2, t3, t4, t5));
         }
     }
 
