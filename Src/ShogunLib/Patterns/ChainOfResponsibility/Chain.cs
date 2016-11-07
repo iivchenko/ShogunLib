@@ -178,7 +178,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly IEnumerable<IVoidLink> _links;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidChain"/> type.
+        /// Initializes a new instance of the <see cref="VoidChain"/> class.
         /// </summary>
         /// <param name="links">Links for the Chain of responsibility.</param>
         public VoidChain(IEnumerable<IVoidLink> links)
@@ -209,7 +209,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly IEnumerable<IVoidLink<T1>> _links;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidChain{T1}"/> type.
+        /// Initializes a new instance of the <see cref="VoidChain{T1}"/> class.
         /// </summary>
         /// <param name="links">Links for the Chain of responsibility.</param>
         public VoidChain(IEnumerable<IVoidLink<T1>> links)
@@ -242,7 +242,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly IEnumerable<IVoidLink<T1, T2>> _links;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidChain{T1, T2}"/> type.
+        /// Initializes a new instance of the <see cref="VoidChain{T1, T2}"/> class.
         /// </summary>
         /// <param name="links">Links for the Chain of responsibility.</param>
         public VoidChain(IEnumerable<IVoidLink<T1, T2>> links)
@@ -277,7 +277,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly IEnumerable<IVoidLink<T1, T2, T3>> _links;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidChain{T1, T2, T3}"/> type.
+        /// Initializes a new instance of the <see cref="VoidChain{T1, T2, T3}"/> class.
         /// </summary>
         /// <param name="links">Links for the Chain of responsibility.</param>
         public VoidChain(IEnumerable<IVoidLink<T1, T2, T3>> links)
@@ -314,7 +314,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly IEnumerable<IVoidLink<T1, T2, T3, T4>> _links;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidChain{T1, T2, T3, T4}"/> type.
+        /// Initializes a new instance of the <see cref="VoidChain{T1, T2, T3, T4}"/> class.
         /// </summary>
         /// <param name="links">Links for the Chain of responsibility.</param>
         public VoidChain(IEnumerable<IVoidLink<T1, T2, T3, T4>> links)
@@ -344,16 +344,16 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
     /// Chain of responsibility with no output and five parameters.
     /// </summary>
     /// <typeparam name="T1">Type of chain first input parameter.</typeparam>
-    /// <typeparam name="T2">Type of chain secon input parameter.</typeparam>
-    /// <typeparam name="T3">Type of chain first input parameter.</typeparam>
-    /// <typeparam name="T4">Type of chain first input parameter.</typeparam>
-    /// <typeparam name="T5">Type of chain first input parameter.</typeparam>
+    /// <typeparam name="T2">Type of chain second input parameter.</typeparam>
+    /// <typeparam name="T3">Type of chain third input parameter.</typeparam>
+    /// <typeparam name="T4">Type of chain fourth input parameter.</typeparam>
+    /// <typeparam name="T5">Type of chain fifth input parameter.</typeparam>
     public class VoidChain<T1, T2, T3, T4, T5> : IVoidChain<T1, T2, T3, T4, T5>
     {
         private readonly IEnumerable<IVoidLink<T1, T2, T3, T4, T5>> _links;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidChain{T1, T2, T3, T4, T5}"/> type.
+        /// Initializes a new instance of the <see cref="VoidChain{T1, T2, T3, T4, T5}"/> class.
         /// </summary>
         /// <param name="links">Links for the Chain of responsibility.</param>
         public VoidChain(IEnumerable<IVoidLink<T1, T2, T3, T4, T5>> links)
@@ -393,7 +393,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly IEnumerable<IResultLink<TResult>> _links;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResultChain{TResult}"/> type.
+        /// Initializes a new instance of the <see cref="ResultChain{TResult}"/> class.
         /// </summary>
         /// <param name="links">Links for the Chain of responsibility.</param>
         public ResultChain(IEnumerable<IResultLink<TResult>> links)
@@ -427,7 +427,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly IEnumerable<IResultLink<T1, TResult>> _links;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResultChain{T1, TResult}"/> type.
+        /// Initializes a new instance of the <see cref="ResultChain{T1, TResult}"/> class.
         /// </summary>
         /// <param name="links">Links for the Chain of responsibility.</param>
         public ResultChain(IEnumerable<IResultLink<T1, TResult>> links)
@@ -463,7 +463,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly IEnumerable<IResultLink<T1, T2, TResult>> _links;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResultChain{T1, T2, TResult}"/> type.
+        /// Initializes a new instance of the <see cref="ResultChain{T1, T2, TResult}"/> class.
         /// </summary>
         /// <param name="links">Links for the Chain of responsibility.</param>
         public ResultChain(IEnumerable<IResultLink<T1, T2, TResult>> links)
@@ -501,7 +501,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly IEnumerable<IResultLink<T1, T2, T3, TResult>> _links;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResultChain{T1, T2, T3, TResult}"/> type.
+        /// Initializes a new instance of the <see cref="ResultChain{T1, T2, T3, TResult}"/> class.
         /// </summary>
         /// <param name="links">Links for the Chain of responsibility.</param>
         public ResultChain(IEnumerable<IResultLink<T1, T2, T3, TResult>> links)
@@ -541,7 +541,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly IEnumerable<IResultLink<T1, T2, T3, T4, TResult>> _links;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResultChain{T1, T2, T3, T4, TResult}"/> type.
+        /// Initializes a new instance of the <see cref="ResultChain{T1, T2, T3, T4, TResult}"/> class.
         /// </summary>
         /// <param name="links">Links for the Chain of responsibility.</param>
         public ResultChain(IEnumerable<IResultLink<T1, T2, T3, T4, TResult>> links)
@@ -583,7 +583,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly IEnumerable<IResultLink<T1, T2, T3, T4, T5, TResult>> _links;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResultChain{T1, T2, T3, T4, T5, TResult}"/> type.
+        /// Initializes a new instance of the <see cref="ResultChain{T1, T2, T3, T4, T5, TResult}"/> class.
         /// </summary>
         /// <param name="links">Links for the Chain of responsibility.</param>
         public ResultChain(IEnumerable<IResultLink<T1, T2, T3, T4, T5, TResult>> links)

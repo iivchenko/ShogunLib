@@ -19,9 +19,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly IVoidDo _voidDo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidLink"/> type.
+        /// Initializes a new instance of the <see cref="VoidLink"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         /// <param name="voidDo">Link action.</param>
         public VoidLink(Func<bool> cando, Action voidDo)
             : this(new Can(cando), new VoidDo(voidDo))
@@ -29,9 +29,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidLink"/> type.
+        /// Initializes a new instance of the <see cref="VoidLink"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         /// <param name="voidDo">Link action.</param>
         public VoidLink(ICan cando, IVoidDo voidDo)
         {
@@ -43,7 +43,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Determines wherther a link can handle input request.
+        /// Determines whether a link can handle input request.
         /// </summary>
         /// <returns>true - link can handle; false - link can't handle</returns>
         public bool Cando()
@@ -70,9 +70,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly IVoidDo<T1> _voidDo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidLink{T1}"/> type.
+        /// Initializes a new instance of the <see cref="VoidLink{T1}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         /// <param name="voidDo">Link action.</param>
         public VoidLink(Func<T1, bool> cando, Action<T1> voidDo)
             : this(new Can<T1>(cando), new VoidDo<T1>(voidDo))
@@ -80,9 +80,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidLink{T1}"/> type.
+        /// Initializes a new instance of the <see cref="VoidLink{T1}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         /// <param name="voidDo">Link action.</param>
         public VoidLink(ICan<T1> cando, IVoidDo<T1> voidDo)
         {
@@ -94,7 +94,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Determines wherther a link can handle input request.
+        /// Determines whether a link can handle input request.
         /// </summary>
         /// <param name="t1">First input parameter of a link.</param>
         /// <returns>true - link can handle; false - link can't handle</returns>
@@ -124,9 +124,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly IVoidDo<T1, T2> _voidDo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidLink{T1, T2}"/> type.
+        /// Initializes a new instance of the <see cref="VoidLink{T1, T2}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         /// <param name="voidDo">Link action.</param>
         public VoidLink(Func<T1, T2, bool> cando, Action<T1, T2> voidDo)
             : this(new Can<T1, T2>(cando), new VoidDo<T1, T2>(voidDo))
@@ -134,9 +134,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidLink{T1, T2}"/> type.
+        /// Initializes a new instance of the <see cref="VoidLink{T1, T2}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         /// <param name="voidDo">Link action.</param>
         public VoidLink(ICan<T1, T2> cando, IVoidDo<T1, T2> voidDo)
         {
@@ -148,7 +148,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Determines wherther a link can handle input request.
+        /// Determines whether a link can handle input request.
         /// </summary>
         /// <param name="t1">First input parameter of a link.</param>
         /// <param name="t2">Second input parameter of a link.</param>
@@ -181,9 +181,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly IVoidDo<T1, T2, T3> _voidDo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidLink{T1, T2, T3}"/> type.
+        /// Initializes a new instance of the <see cref="VoidLink{T1, T2, T3}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         /// <param name="voidDo">Link action.</param>
         public VoidLink(Func<T1, T2, T3, bool> cando, Action<T1, T2, T3> voidDo)
             : this(new Can<T1, T2, T3>(cando), new VoidDo<T1, T2, T3>(voidDo))
@@ -191,9 +191,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidLink{T1, T2, T3}"/> type.
+        /// Initializes a new instance of the <see cref="VoidLink{T1, T2, T3}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         /// <param name="voidDo">Link action.</param>
         public VoidLink(ICan<T1, T2, T3> cando, IVoidDo<T1, T2, T3> voidDo)
         {
@@ -205,7 +205,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Determines wherther a link can handle input request.
+        /// Determines whether a link can handle input request.
         /// </summary>
         /// <param name="t1">First input parameter of a link.</param>
         /// <param name="t2">Second input parameter of a link.</param>
@@ -241,9 +241,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly IVoidDo<T1, T2, T3, T4> _voidDo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidLink{T1, T2, T3, T4}"/> type.
+        /// Initializes a new instance of the <see cref="VoidLink{T1, T2, T3, T4}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         /// <param name="voidDo">Link action.</param>
         public VoidLink(Func<T1, T2, T3, T4, bool> cando, Action<T1, T2, T3, T4> voidDo)
             : this(new Can<T1, T2, T3, T4>(cando), new VoidDo<T1, T2, T3, T4>(voidDo))
@@ -251,9 +251,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidLink{T1, T2, T3, T4}"/> type.
+        /// Initializes a new instance of the <see cref="VoidLink{T1, T2, T3, T4}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         /// <param name="voidDo">Link action.</param>
         public VoidLink(ICan<T1, T2, T3, T4> cando, IVoidDo<T1, T2, T3, T4> voidDo)
         {
@@ -265,7 +265,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Determines wherther a link can handle input request.
+        /// Determines whether a link can handle input request.
         /// </summary>
         /// <param name="t1">First input parameter of a link.</param>
         /// <param name="t2">Second input parameter of a link.</param>
@@ -304,9 +304,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly IVoidDo<T1, T2, T3, T4, T5> _voidDo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidLink{T1, T2, T3, T4, T5}"/> type.
+        /// Initializes a new instance of the <see cref="VoidLink{T1, T2, T3, T4, T5}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         /// <param name="voidDo">Link action.</param>
         public VoidLink(Func<T1, T2, T3, T4, T5, bool> cando, Action<T1, T2, T3, T4, T5> voidDo)
             : this(new Can<T1, T2, T3, T4, T5>(cando), new VoidDo<T1, T2, T3, T4, T5>(voidDo))
@@ -314,9 +314,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidLink{T1, T2, T3, T4, T5}"/> type.
+        /// Initializes a new instance of the <see cref="VoidLink{T1, T2, T3, T4, T5}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         /// <param name="voidDo">Link action.</param>
         public VoidLink(ICan<T1, T2, T3, T4, T5> cando, IVoidDo<T1, T2, T3, T4, T5> voidDo)
         {
@@ -328,7 +328,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Determines wherther a link can handle input request.
+        /// Determines whether a link can handle input request.
         /// </summary>
         /// <param name="t1">First input parameter of a link.</param>
         /// <param name="t2">Second input parameter of a link.</param>
@@ -369,19 +369,19 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly IResultDo<TResult> _resultDo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResultLink{TResult}"/> type.
+        /// Initializes a new instance of the <see cref="ResultLink{TResult}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         /// <param name="resultDo">Link action.</param>
         public ResultLink(Func<bool> cando, Func<TResult> resultDo)
-            : this(new Can(cando), new ResultDo<TResult> (resultDo))
+            : this(new Can(cando), new ResultDo<TResult>(resultDo))
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResultLink{TResult}"/> type.
+        /// Initializes a new instance of the <see cref="ResultLink{TResult}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         /// <param name="resultDo">Link action.</param>
         public ResultLink(ICan cando, IResultDo<TResult> resultDo)
         {
@@ -393,7 +393,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Determines wherther a link can handle input request.
+        /// Determines whether a link can handle input request.
         /// </summary>
         /// <returns>true - link can handle; false - link can't handle</returns>
         public bool Cando()
@@ -422,9 +422,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly IResultDo<T1, TResult> _resultDo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResultLink{T1, TResult}"/> type.
+        /// Initializes a new instance of the <see cref="ResultLink{T1, TResult}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         /// <param name="resultDo">Link action.</param>
         public ResultLink(Func<T1, bool> cando, Func<T1, TResult> resultDo)
             : this(new Can<T1>(cando), new ResultDo<T1, TResult>(resultDo))
@@ -432,9 +432,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResultLink{T1, TResult}"/> type.
+        /// Initializes a new instance of the <see cref="ResultLink{T1, TResult}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         /// <param name="resultDo">Link action.</param>
         public ResultLink(ICan<T1> cando, IResultDo<T1, TResult> resultDo)
         {
@@ -446,7 +446,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Determines wherther a link can handle input request.
+        /// Determines whether a link can handle input request.
         /// </summary>
         /// <param name="t1">First input parameter of a link.</param>
         /// <returns>true - link can handle; false - link can't handle</returns>
@@ -478,9 +478,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly IResultDo<T1, T2, TResult> _resultDo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResultLink{T1, T2, TResult}"/> type.
+        /// Initializes a new instance of the <see cref="ResultLink{T1, T2, TResult}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         /// <param name="resultDo">Link action.</param>
         public ResultLink(Func<T1, T2, bool> cando, Func<T1, T2, TResult> resultDo)
             : this(new Can<T1, T2>(cando), new ResultDo<T1, T2, TResult>(resultDo))
@@ -488,9 +488,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResultLink{T1, T2, TResult}"/> type.
+        /// Initializes a new instance of the <see cref="ResultLink{T1, T2, TResult}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         /// <param name="resultDo">Link action.</param>
         public ResultLink(ICan<T1, T2> cando, IResultDo<T1, T2, TResult> resultDo)
         {
@@ -502,7 +502,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Determines wherther a link can handle input request.
+        /// Determines whether a link can handle input request.
         /// </summary>
         /// <param name="t1">First input parameter of a link.</param>
         /// <param name="t2">Second input parameter of a link.</param>
@@ -537,9 +537,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly IResultDo<T1, T2, T3, TResult> _resultDo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResultLink{T1, T2, T3, TResult}"/> type.
+        /// Initializes a new instance of the <see cref="ResultLink{T1, T2, T3, TResult}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         /// <param name="resultDo">Link action.</param>
         public ResultLink(Func<T1, T2, T3, bool> cando, Func<T1, T2, T3, TResult> resultDo)
             : this(new Can<T1, T2, T3>(cando), new ResultDo<T1, T2, T3, TResult>(resultDo))
@@ -547,9 +547,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResultLink{T1, T2, T3, TResult}"/> type.
+        /// Initializes a new instance of the <see cref="ResultLink{T1, T2, T3, TResult}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         /// <param name="resultDo">Link action.</param>
         public ResultLink(ICan<T1, T2, T3> cando, IResultDo<T1, T2, T3, TResult> resultDo)
         {
@@ -561,7 +561,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Determines wherther a link can handle input request.
+        /// Determines whether a link can handle input request.
         /// </summary>
         /// <param name="t1">First input parameter of a link.</param>
         /// <param name="t2">Second input parameter of a link.</param>
@@ -599,9 +599,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly IResultDo<T1, T2, T3, T4, TResult> _resultDo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResultLink{T1, T2, T3, T4, TResult}"/> type.
+        /// Initializes a new instance of the <see cref="ResultLink{T1, T2, T3, T4, TResult}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         /// <param name="resultDo">Link action.</param>
         public ResultLink(Func<T1, T2, T3, T4, bool> cando, Func<T1, T2, T3, T4, TResult> resultDo)
             : this(new Can<T1, T2, T3, T4>(cando), new ResultDo<T1, T2, T3, T4, TResult>(resultDo))
@@ -609,9 +609,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResultLink{T1, T2, T3, T4, TResult}"/> type.
+        /// Initializes a new instance of the <see cref="ResultLink{T1, T2, T3, T4, TResult}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         /// <param name="resultDo">Link action.</param>
         public ResultLink(ICan<T1, T2, T3, T4> cando, IResultDo<T1, T2, T3, T4, TResult> resultDo)
         {
@@ -623,7 +623,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Determines wherther a link can handle input request.
+        /// Determines whether a link can handle input request.
         /// </summary>
         /// <param name="t1">First input parameter of a link.</param>
         /// <param name="t2">Second input parameter of a link.</param>
@@ -664,9 +664,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly IResultDo<T1, T2, T3, T4, T5, TResult> _resultDo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResultLink{T1, T2, T3, T4, T5, TResult}"/> type.
+        /// Initializes a new instance of the <see cref="ResultLink{T1, T2, T3, T4, T5, TResult}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         /// <param name="resultDo">Link action.</param>
         public ResultLink(Func<T1, T2, T3, T4, T5, bool> cando, Func<T1, T2, T3, T4, T5, TResult> resultDo)
             : this(new Can<T1, T2, T3, T4, T5>(cando), new ResultDo<T1, T2, T3, T4, T5, TResult>(resultDo))
@@ -674,9 +674,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResultLink{T1, T2, T3, T4, T5, TResult}"/> type.
+        /// Initializes a new instance of the <see cref="ResultLink{T1, T2, T3, T4, T5, TResult}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         /// <param name="resultDo">Link action.</param>
         public ResultLink(ICan<T1, T2, T3, T4, T5> cando, IResultDo<T1, T2, T3, T4, T5, TResult> resultDo)
         {
@@ -688,7 +688,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Determines wherther a link can handle input request.
+        /// Determines whether a link can handle input request.
         /// </summary>
         /// <param name="t1">First input parameter of a link.</param>
         /// <param name="t2">Second input parameter of a link.</param>

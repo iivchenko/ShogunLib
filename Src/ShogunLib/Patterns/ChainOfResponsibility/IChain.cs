@@ -87,10 +87,10 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
     /// Chain of responsibility with no output and five parameters.
     /// </summary>
     /// <typeparam name="T1">Type of chain first input parameter.</typeparam>
-    /// <typeparam name="T2">Type of chain secon input parameter.</typeparam>
-    /// <typeparam name="T3">Type of chain first input parameter.</typeparam>
-    /// <typeparam name="T4">Type of chain first input parameter.</typeparam>
-    /// <typeparam name="T5">Type of chain first input parameter.</typeparam>
+    /// <typeparam name="T2">Type of chain second input parameter.</typeparam>
+    /// <typeparam name="T3">Type of chain third input parameter.</typeparam>
+    /// <typeparam name="T4">Type of chain fourth input parameter.</typeparam>
+    /// <typeparam name="T5">Type of chain fifth input parameter.</typeparam>
     public interface IVoidChain<in T1, in T2, in T3, in T4, in T5>
     {
         /// <summary>

@@ -7,25 +7,25 @@
 namespace ShogunLib.Patterns.ChainOfResponsibility
 {
     /// <summary>
-    /// Defines predicate (no input parameters) that determines wherther a link can handle input request.
+    /// Defines predicate (no input parameters) that determines whether a link can handle input request.
     /// </summary>
     public interface ICan
     {
         /// <summary>
-        /// Determines wherther a link can handle input request.
+        /// Determines whether a link can handle input request.
         /// </summary>
         /// <returns>true - link can handle; false - link can't handle</returns>
         bool Cando();
     }
 
     /// <summary>
-    /// Defines predicate (one input parameter) that determines wherther a link can handle input request.
+    /// Defines predicate (one input parameter) that determines whether a link can handle input request.
     /// </summary>
     /// <typeparam name="T1">Type of link first input parameter.</typeparam>
     public interface ICan<in T1>
     {
         /// <summary>
-        /// Determines wherther a link can handle input request.
+        /// Determines whether a link can handle input request.
         /// </summary>
         /// <param name="t1">First input parameter of a link.</param>
         /// <returns>true - link can handle; false - link can't handle</returns>
@@ -33,14 +33,14 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
     }
 
     /// <summary>
-    /// Defines predicate (two input parameter) that determines wherther a link can handle input request.
+    /// Defines predicate (two input parameter) that determines whether a link can handle input request.
     /// </summary>
     /// <typeparam name="T1">Type of link first input parameter.</typeparam>
     /// <typeparam name="T2">Type of link second input parameter.</typeparam>
     public interface ICan<in T1, in T2>
     {
         /// <summary>
-        /// Determines wherther a link can handle input request.
+        /// Determines whether a link can handle input request.
         /// </summary>
         /// <param name="t1">First input parameter of a link.</param>
         /// <param name="t2">Second input parameter of a link.</param>
@@ -49,7 +49,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
     }
 
     /// <summary>
-    /// Defines predicate (three input parameter) that determines wherther a link can handle input request.
+    /// Defines predicate (three input parameter) that determines whether a link can handle input request.
     /// </summary>
     /// <typeparam name="T1">Type of link first input parameter.</typeparam>
     /// <typeparam name="T2">Type of link second input parameter.</typeparam>
@@ -57,7 +57,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
     public interface ICan<in T1, in T2, in T3>
     {
         /// <summary>
-        /// Determines wherther a link can handle input request.
+        /// Determines whether a link can handle input request.
         /// </summary>
         /// <param name="t1">First input parameter of a link.</param>
         /// <param name="t2">Second input parameter of a link.</param>
@@ -67,7 +67,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
     }
 
     /// <summary>
-    /// Defines predicate (four input parameter) that determines wherther a link can handle input request.
+    /// Defines predicate (four input parameter) that determines whether a link can handle input request.
     /// </summary>
     /// <typeparam name="T1">Type of link first input parameter.</typeparam>
     /// <typeparam name="T2">Type of link second input parameter.</typeparam>
@@ -76,7 +76,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
     public interface ICan<in T1, in T2, in T3, in T4>
     {
         /// <summary>
-        /// Determines wherther a link can handle input request.
+        /// Determines whether a link can handle input request.
         /// </summary>
         /// <param name="t1">First input parameter of a link.</param>
         /// <param name="t2">Second input parameter of a link.</param>
@@ -87,7 +87,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
     }
 
     /// <summary>
-    /// Defines predicate (five input parameter) that determines wherther a link can handle input request.
+    /// Defines predicate (five input parameter) that determines whether a link can handle input request.
     /// </summary>
     /// <typeparam name="T1">Type of link first input parameter.</typeparam>
     /// <typeparam name="T2">Type of link second input parameter.</typeparam>
@@ -97,7 +97,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
     public interface ICan<in T1, in T2, in T3, in T4, in T5>
     {
         /// <summary>
-        /// Determines wherther a link can handle input request.
+        /// Determines whether a link can handle input request.
         /// </summary>
         /// <param name="t1">First input parameter of a link.</param>
         /// <param name="t2">Second input parameter of a link.</param>

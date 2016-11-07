@@ -8,16 +8,16 @@ using System;
 namespace ShogunLib.Patterns.ChainOfResponsibility
 {
     /// <summary>
-    /// Defines predicate (no input parameters) that determines wherther a link can handle input request.
+    /// Defines predicate (no input parameters) that determines whether a link can handle input request.
     /// </summary>
     public sealed class Can : ICan
     {
         private readonly Func<bool> _cando;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Can"/> type.
+        /// Initializes a new instance of the <see cref="Can"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         public Can(Func<bool> cando)
         {
             cando.ValidateNull(nameof(cando));
@@ -26,7 +26,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Determines wherther a link can handle input request.
+        /// Determines whether a link can handle input request.
         /// </summary>
         /// <returns>true - link can handle; false - link can't handle</returns>
         public bool Cando()
@@ -36,7 +36,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
     }
 
     /// <summary>
-    /// Defines predicate (one input parameter) that determines wherther a link can handle input request.
+    /// Defines predicate (one input parameter) that determines whether a link can handle input request.
     /// </summary>
     /// <typeparam name="T1">Type of link first input parameter.</typeparam>
     public sealed class Can<T1> : ICan<T1>
@@ -44,9 +44,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly Func<T1, bool> _cando;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Can{T1}"/> type.
+        /// Initializes a new instance of the <see cref="Can{T1}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         public Can(Func<T1, bool> cando)
         {
             cando.ValidateNull(nameof(cando));
@@ -55,7 +55,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Determines wherther a link can handle input request.
+        /// Determines whether a link can handle input request.
         /// </summary>
         /// <param name="t1">First input parameter of a link.</param>
         /// <returns>true - link can handle; false - link can't handle</returns>
@@ -66,7 +66,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
     }
 
     /// <summary>
-    /// Defines predicate (two input parameter) that determines wherther a link can handle input request.
+    /// Defines predicate (two input parameter) that determines whether a link can handle input request.
     /// </summary>
     /// <typeparam name="T1">Type of link first input parameter.</typeparam>
     /// <typeparam name="T2">Type of link second input parameter.</typeparam>
@@ -75,9 +75,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly Func<T1, T2, bool> _cando;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Can{T1, T2}"/> type.
+        /// Initializes a new instance of the <see cref="Can{T1, T2}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         public Can(Func<T1, T2, bool> cando)
         {
             cando.ValidateNull(nameof(cando));
@@ -86,7 +86,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Determines wherther a link can handle input request.
+        /// Determines whether a link can handle input request.
         /// </summary>
         /// <param name="t1">First input parameter of a link.</param>
         /// <param name="t2">Second input parameter of a link.</param>
@@ -98,7 +98,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
     }
 
     /// <summary>
-    /// Defines predicate (three input parameter) that determines wherther a link can handle input request.
+    /// Defines predicate (three input parameter) that determines whether a link can handle input request.
     /// </summary>
     /// <typeparam name="T1">Type of link first input parameter.</typeparam>
     /// <typeparam name="T2">Type of link second input parameter.</typeparam>
@@ -108,9 +108,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly Func<T1, T2, T3, bool> _cando;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Can{T1, T2, T3}"/> type.
+        /// Initializes a new instance of the <see cref="Can{T1, T2, T3}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         public Can(Func<T1, T2, T3, bool> cando)
         {
             cando.ValidateNull(nameof(cando));
@@ -119,7 +119,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Determines wherther a link can handle input request.
+        /// Determines whether a link can handle input request.
         /// </summary>
         /// <param name="t1">First input parameter of a link.</param>
         /// <param name="t2">Second input parameter of a link.</param>
@@ -132,7 +132,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
     }
 
     /// <summary>
-    /// Defines predicate (four input parameter) that determines wherther a link can handle input request.
+    /// Defines predicate (four input parameter) that determines whether a link can handle input request.
     /// </summary>
     /// <typeparam name="T1">Type of link first input parameter.</typeparam>
     /// <typeparam name="T2">Type of link second input parameter.</typeparam>
@@ -143,9 +143,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly Func<T1, T2, T3, T4, bool> _cando;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Can{T1, T2, T3, T4}"/> type.
+        /// Initializes a new instance of the <see cref="Can{T1, T2, T3, T4}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         public Can(Func<T1, T2, T3, T4, bool> cando)
         {
             cando.ValidateNull(nameof(cando));
@@ -154,7 +154,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Determines wherther a link can handle input request.
+        /// Determines whether a link can handle input request.
         /// </summary>
         /// <param name="t1">First input parameter of a link.</param>
         /// <param name="t2">Second input parameter of a link.</param>
@@ -168,7 +168,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
     }
 
     /// <summary>
-    /// Defines predicate (five input parameter) that determines wherther a link can handle input request.
+    /// Defines predicate (five input parameter) that determines whether a link can handle input request.
     /// </summary>
     /// <typeparam name="T1">Type of link first input parameter.</typeparam>
     /// <typeparam name="T2">Type of link second input parameter.</typeparam>
@@ -180,9 +180,9 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly Func<T1, T2, T3, T4, T5, bool> _cando;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Can{T1, T2, T3, T4, T5}"/> type.
+        /// Initializes a new instance of the <see cref="Can{T1, T2, T3, T4, T5}"/> class.
         /// </summary>
-        /// <param name="cando">Predicate that determines wherther a link can handle input request.</param>
+        /// <param name="cando">Predicate that determines whether a link can handle input request.</param>
         public Can(Func<T1, T2, T3, T4, T5, bool> cando)
         {
             cando.ValidateNull(nameof(cando));
@@ -191,7 +191,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         }
 
         /// <summary>
-        /// Determines wherther a link can handle input request.
+        /// Determines whether a link can handle input request.
         /// </summary>
         /// <param name="t1">First input parameter of a link.</param>
         /// <param name="t2">Second input parameter of a link.</param>

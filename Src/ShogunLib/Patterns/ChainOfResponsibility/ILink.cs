@@ -1,4 +1,10 @@
-﻿namespace ShogunLib.Patterns.ChainOfResponsibility
+﻿// <copyright company="XATA">
+//      Copyright (c) 2016 by Shogun, All Right Reserved
+// </copyright>
+// <author>Ivan Ivchenko</author>
+// <email>iivchenko@live.com</email>
+
+namespace ShogunLib.Patterns.ChainOfResponsibility
 {
     #region Void 
 
@@ -67,7 +73,7 @@
     /// Chain link with output and no input parameters.
     /// </summary>
     /// <typeparam name="TResult">Type of link output.</typeparam>
-    public interface IResultLink <out TResult>: ICan, IResultDo<TResult>
+    public interface IResultLink<out TResult> : ICan, IResultDo<TResult>
     {
     }
 

@@ -18,7 +18,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly Action _voidDo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidDo"/> type.
+        /// Initializes a new instance of the <see cref="VoidDo"/> class.
         /// </summary>
         /// <param name="voidDo">Link action.</param>
         public VoidDo(Action voidDo)
@@ -46,7 +46,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly Action<T1> _voidDo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidDo{T1}"/> type.
+        /// Initializes a new instance of the <see cref="VoidDo{T1}"/> class.
         /// </summary>
         /// <param name="voidDo">Link action.</param>
         public VoidDo(Action<T1> voidDo)
@@ -76,7 +76,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly Action<T1, T2> _voidDo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidDo{T1, T2}"/> type.
+        /// Initializes a new instance of the <see cref="VoidDo{T1, T2}"/> class.
         /// </summary>
         /// <param name="voidDo">Link action.</param>
         public VoidDo(Action<T1, T2> voidDo)
@@ -108,7 +108,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly Action<T1, T2, T3> _voidDo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidDo{T1, T2, T3}"/> type.
+        /// Initializes a new instance of the <see cref="VoidDo{T1, T2, T3}"/> class.
         /// </summary>
         /// <param name="voidDo">Link action.</param>
         public VoidDo(Action<T1, T2, T3> voidDo)
@@ -142,7 +142,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly Action<T1, T2, T3, T4> _voidDo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidDo{T1, T2, T3, T4}"/> type.
+        /// Initializes a new instance of the <see cref="VoidDo{T1, T2, T3, T4}"/> class.
         /// </summary>
         /// <param name="voidDo">Link action.</param>
         public VoidDo(Action<T1, T2, T3, T4> voidDo)
@@ -178,7 +178,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly Action<T1, T2, T3, T4, T5> _voidDo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidDo{T1, T2, T3, T4, T5}"/> type.
+        /// Initializes a new instance of the <see cref="VoidDo{T1, T2, T3, T4, T5}"/> class.
         /// </summary>
         /// <param name="voidDo">Link action.</param>
         public VoidDo(Action<T1, T2, T3, T4, T5> voidDo)
@@ -215,7 +215,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly Func<TResult> _resultDo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResultDo{TResult}"/> type.
+        /// Initializes a new instance of the <see cref="ResultDo{TResult}"/> class.
         /// </summary>
         /// <param name="resultDo">Link action.</param>
         public ResultDo(Func<TResult> resultDo)
@@ -245,7 +245,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly Func<T1, TResult> _resultDo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResultDo{T1, TResult}"/> type.
+        /// Initializes a new instance of the <see cref="ResultDo{T1, TResult}"/> class.
         /// </summary>
         /// <param name="resultDo">Link action.</param>
         public ResultDo(Func<T1, TResult> resultDo)
@@ -277,7 +277,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly Func<T1, T2, TResult> _resultDo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResultDo{T1, T2, TResult}"/> type.
+        /// Initializes a new instance of the <see cref="ResultDo{T1, T2, TResult}"/> class.
         /// </summary>
         /// <param name="resultDo">Link action.</param>
         public ResultDo(Func<T1, T2, TResult> resultDo)
@@ -311,7 +311,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly Func<T1, T2, T3, TResult> _resultDo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResultDo{T1, T2, T3, TResult}"/> type.
+        /// Initializes a new instance of the <see cref="ResultDo{T1, T2, T3, TResult}"/> class.
         /// </summary>
         /// <param name="resultDo">Link action.</param>
         public ResultDo(Func<T1, T2, T3, TResult> resultDo)
@@ -347,7 +347,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly Func<T1, T2, T3, T4, TResult> _resultDo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResultDo{T1, T2, T3, T4, TResult}"/> type.
+        /// Initializes a new instance of the <see cref="ResultDo{T1, T2, T3, T4, TResult}"/> class.
         /// </summary>
         /// <param name="resultDo">Link action.</param>
         public ResultDo(Func<T1, T2, T3, T4, TResult> resultDo)
@@ -385,7 +385,7 @@ namespace ShogunLib.Patterns.ChainOfResponsibility
         private readonly Func<T1, T2, T3, T4, T5, TResult> _resultDo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResultDo{T1, T2, T3, T4, T5, TResult}"/> type.
+        /// Initializes a new instance of the <see cref="ResultDo{T1, T2, T3, T4, T5, TResult}"/> class.
         /// </summary>
         /// <param name="resultDo">Link action.</param>
         public ResultDo(Func<T1, T2, T3, T4, T5, TResult> resultDo)
