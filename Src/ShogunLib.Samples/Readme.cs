@@ -101,8 +101,8 @@ namespace ShogunLib.Samples
             var log = new Logger();
 
             var chain =
-                Chain
-                    .CreateVoid<string, string>()
+                ChainFactory
+                    .CreateVoidBuilder<string, string>()
                     .Add
                     (
                         (level, message) => level == "ERROR",

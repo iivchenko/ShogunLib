@@ -40,8 +40,8 @@ namespace ShogunLib.Samples
 
             // Configure chain
             var chain =
-                Chain
-                    .CreateVoid<string, string>()
+                ChainFactory
+                    .CreateVoidBuilder<string, string>()
                     .Add(mailNotificator)
                     .Add(postNotificator)
                     .Add(smsNotificator)
@@ -74,8 +74,8 @@ namespace ShogunLib.Samples
             var smsDo = new VoidDo<string, string>((country, name) => notificator.SendSms(country, name));
 
             var chain =
-                Chain
-                    .CreateVoid<string, string>()
+                ChainFactory
+                    .CreateVoidBuilder<string, string>()
                     .Add(canSendMail, mailDo)
                     .Add(canSendPost, postDo)
                     .Add(canSendSms, smsDo)
@@ -98,8 +98,8 @@ namespace ShogunLib.Samples
 
             // Configure chain
             var chain =
-                Chain
-                    .CreateVoid<string, string>()
+                ChainFactory
+                    .CreateVoidBuilder<string, string>()
                     .Add
                     (
                         (country, name) => _mailCoutries.Contains(country),
@@ -140,8 +140,8 @@ namespace ShogunLib.Samples
             var postDo = new PostDo(notificator);
 
             var chain =
-                Chain
-                    .CreateVoid<string, string>()
+                ChainFactory
+                    .CreateVoidBuilder<string, string>()
                     .Add(mailNotificator)
                     .Add(canSendPost, postDo)
                     .Add
@@ -174,8 +174,8 @@ namespace ShogunLib.Samples
             var postDo = new PostDoWithResponse(notificator);
 
             var chain =
-                Chain
-                    .CreateResult<string, string, string>()
+                ChainFactory
+                    .CreateResultBuilder<string, string, string>()
                     .Add(mailNotificator)
                     .Add(canSendPost, postDo)
                     .Add

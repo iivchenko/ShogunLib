@@ -37,8 +37,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         [Test]
         public void VoidChain_NoParameters_NoLinks_DoNothing()
         {
-            Chain
-                .CreateVoid()
+            ChainFactory
+                .CreateVoidBuilder()
                 .Build()
                 .Execute();
         }
@@ -51,8 +51,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         {
             var link = WhichLink.None;
 
-            Chain
-                .CreateVoid()
+            ChainFactory
+                .CreateVoidBuilder()
                 .Add(() => canFirst, () => link = WhichLink.First)
                 .Add(() => canSecond, () => link = WhichLink.Second)
                 .Add(() => canThird, () => link = WhichLink.Third)
@@ -69,8 +69,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         [Test]
         public void VoidChain_OneParameters_NoLinks_DoNothing()
         {
-            Chain
-                .CreateVoid<int>()
+            ChainFactory
+                .CreateVoidBuilder<int>()
                 .Build()
                 .Execute(1);
         }
@@ -83,8 +83,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         {
             var link = WhichLink.None;
 
-            Chain
-                .CreateVoid<int>()
+            ChainFactory
+                .CreateVoidBuilder<int>()
                 .Add(t1 => canFirst, t1 => link = WhichLink.First)
                 .Add(t1 => canSecond, t1 => link = WhichLink.Second)
                 .Add(t1 => canThird, t1 => link = WhichLink.Third)
@@ -97,8 +97,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         [Test]
         public void VoidChain_OneParameters_ParametersUsed()
         {
-            Chain
-                .CreateVoid<int>()
+            ChainFactory
+                .CreateVoidBuilder<int>()
                 .Add(
                     t1 =>
                     {
@@ -120,8 +120,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         [Test]
         public void VoidChain_TwoParameters_NoLinks_DoNothing()
         {
-            Chain
-                .CreateVoid<int, int>()
+            ChainFactory
+                .CreateVoidBuilder<int, int>()
                 .Build()
                 .Execute(1, 2);
         }
@@ -134,8 +134,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         {
             var link = WhichLink.None;
 
-            Chain
-                .CreateVoid<int, int>()
+            ChainFactory
+                .CreateVoidBuilder<int, int>()
                 .Add((t1, t2) => canFirst, (t1, t2) => link = WhichLink.First)
                 .Add((t1, t2) => canSecond, (t1, t2) => link = WhichLink.Second)
                 .Add((t1, t2) => canThird, (t1, t2) => link = WhichLink.Third)
@@ -148,8 +148,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         [Test]
         public void VoidChain_TwoParameters_ParametersUsed()
         {
-            Chain
-                .CreateVoid<int, int>()
+            ChainFactory
+                .CreateVoidBuilder<int, int>()
                 .Add(
                     (t1, t2) =>
                     {
@@ -173,8 +173,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         [Test]
         public void VoidChain_ThreeParameters_NoLinks_DoNothing()
         {
-            Chain
-                .CreateVoid<int, int, int>()
+            ChainFactory
+                .CreateVoidBuilder<int, int, int>()
                 .Build()
                 .Execute(1, 2, 3);
         }
@@ -187,8 +187,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         {
             var link = WhichLink.None;
 
-            Chain
-                .CreateVoid<int, int, int>()
+            ChainFactory
+                .CreateVoidBuilder<int, int, int>()
                 .Add((t1, t2, t3) => canFirst, (t1, t2, t3) => link = WhichLink.First)
                 .Add((t1, t2, t3) => canSecond, (t1, t2, t3) => link = WhichLink.Second)
                 .Add((t1, t2, t3) => canThird, (t1, t2, t3) => link = WhichLink.Third)
@@ -201,8 +201,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         [Test]
         public void VoidChain_ThreeParameters_ParametersUsed()
         {
-            Chain
-                .CreateVoid<int, int, int>()
+            ChainFactory
+                .CreateVoidBuilder<int, int, int>()
                 .Add(
                     (t1, t2, t3) =>
                     {
@@ -228,8 +228,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         [Test]
         public void VoidChain_FourParameters_NoLinks_DoNothing()
         {
-            Chain
-                .CreateVoid<int, int, int, int>()
+            ChainFactory
+                .CreateVoidBuilder<int, int, int, int>()
                 .Build()
                 .Execute(1, 2, 3, 4);
         }
@@ -242,8 +242,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         {
             var link = WhichLink.None;
 
-            Chain
-                .CreateVoid<int, int, int, int>()
+            ChainFactory
+                .CreateVoidBuilder<int, int, int, int>()
                 .Add((t1, t2, t3, t4) => canFirst, (t1, t2, t3, t4) => link = WhichLink.First)
                 .Add((t1, t2, t3, t4) => canSecond, (t1, t2, t3, t4) => link = WhichLink.Second)
                 .Add((t1, t2, t3, t4) => canThird, (t1, t2, t3, t4) => link = WhichLink.Third)
@@ -256,8 +256,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         [Test]
         public void VoidChain_FourParameters_ParametersUsed()
         {
-            Chain
-                .CreateVoid<int, int, int, int>()
+            ChainFactory
+                .CreateVoidBuilder<int, int, int, int>()
                 .Add(
                     (t1, t2, t3, t4) =>
                     {
@@ -285,8 +285,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         [Test]
         public void VoidChain_FiveParameters_NoLinks_DoNothing()
         {
-            Chain
-                .CreateVoid<int, int, int, int, int>()
+            ChainFactory
+                .CreateVoidBuilder<int, int, int, int, int>()
                 .Build()
                 .Execute(1, 2, 3, 4, 5);
         }
@@ -299,8 +299,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         {
             var link = WhichLink.None;
 
-            Chain
-                .CreateVoid<int, int, int, int, int>()
+            ChainFactory
+                .CreateVoidBuilder<int, int, int, int, int>()
                 .Add((t1, t2, t3, t4, t5) => canFirst, (t1, t2, t3, t4, t5) => link = WhichLink.First)
                 .Add((t1, t2, t3, t4, t5) => canSecond, (t1, t2, t3, t4, t5) => link = WhichLink.Second)
                 .Add((t1, t2, t3, t4, t5) => canThird, (t1, t2, t3, t4, t5) => link = WhichLink.Third)
@@ -313,8 +313,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         [Test]
         public void VoidChain_FiveParameters_ParametersUsed()
         {
-            Chain
-                .CreateVoid<int, int, int, int, int>()
+            ChainFactory
+                .CreateVoidBuilder<int, int, int, int, int>()
                 .Add(
                     (t1, t2, t3, t4, t5) =>
                     {
@@ -349,8 +349,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         public void ResultChain_NoParameters_NoLinks_DoNothing()
         {
             var result =
-                Chain
-                    .CreateResult<string>()
+                ChainFactory
+                    .CreateResultBuilder<string>()
                     .Build()
                     .Execute();
 
@@ -363,8 +363,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         [TestCase(WhichLink.Third, Skip, Skip, Do)]
         public void ResultChain_NoParameters(WhichLink expectedLink, bool canFirst, bool canSecond, bool canThird)
         {
-            var link = Chain
-                .CreateResult<WhichLink>()
+            var link = ChainFactory
+                .CreateResultBuilder<WhichLink>()
                 .Add(() => canFirst, () => WhichLink.First)
                 .Add(() => canSecond, () => WhichLink.Second)
                 .Add(() => canThird, () => WhichLink.Third)
@@ -382,8 +382,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         public void ResultChain_OneParameters_NoLinks_DoNothing()
         {
             var result =
-                Chain
-                    .CreateResult<int, string>()
+                ChainFactory
+                    .CreateResultBuilder<int, string>()
                     .Build()
                     .Execute(1);
 
@@ -396,8 +396,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         [TestCase(WhichLink.Third, Skip, Skip, Do)]
         public void ResultChain_OneParameters(WhichLink expectedLink, bool canFirst, bool canSecond, bool canThird)
         {
-            var link = Chain
-                .CreateResult<int, WhichLink>()
+            var link = ChainFactory
+                .CreateResultBuilder<int, WhichLink>()
                 .Add(t1 => canFirst, t1 => WhichLink.First)
                 .Add(t1 => canSecond, t1 => WhichLink.Second)
                 .Add(t1 => canThird, t1 => WhichLink.Third)
@@ -411,8 +411,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         public void ResultChain_OneParameters_ParametersUsed()
         {
             var result =
-                Chain
-                    .CreateResult<int, string>()
+                ChainFactory
+                    .CreateResultBuilder<int, string>()
                     .Add(
                         t1 =>
                         {
@@ -458,8 +458,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         public void ResultChain_TwoParameters_NoLinks_DoNothing()
         {
             var result =
-                Chain
-                    .CreateResult<int, int, string>()
+                ChainFactory
+                    .CreateResultBuilder<int, int, string>()
                     .Build()
                     .Execute(1, 2);
 
@@ -472,8 +472,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         [TestCase(WhichLink.Third, Skip, Skip, Do)]
         public void ResultChain_TwoParameters(WhichLink expectedLink, bool canFirst, bool canSecond, bool canThird)
         {
-            var link = Chain
-                .CreateResult<int, int, WhichLink>()
+            var link = ChainFactory
+                .CreateResultBuilder<int, int, WhichLink>()
                 .Add((t1, t2) => canFirst, (t1, t2) => WhichLink.First)
                 .Add((t1, t2) => canSecond, (t1, t2) => WhichLink.Second)
                 .Add((t1, t2) => canThird, (t1, t2) => WhichLink.Third)
@@ -487,8 +487,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         public void ResultChain_TwoParameters_ParametersUsed()
         {
             var result =
-                Chain
-                    .CreateResult<int, int, string>()
+                ChainFactory
+                    .CreateResultBuilder<int, int, string>()
                     .Add(
                         (t1, t2) =>
                         {
@@ -516,8 +516,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         public void ResultChain_ThreeParameters_NoLinks_DoNothing()
         {
             var result =
-                Chain
-                    .CreateResult<int, int, int, string>()
+                ChainFactory
+                    .CreateResultBuilder<int, int, int, string>()
                     .Build()
                     .Execute(1, 2, 3);
 
@@ -530,8 +530,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         [TestCase(WhichLink.Third, Skip, Skip, Do)]
         public void ResultChain_ThreeParameters(WhichLink expectedLink, bool canFirst, bool canSecond, bool canThird)
         {
-            var link = Chain
-                .CreateResult<int, int, int, WhichLink>()
+            var link = ChainFactory
+                .CreateResultBuilder<int, int, int, WhichLink>()
                 .Add((t1, t2, t3) => canFirst, (t1, t2, t3) => WhichLink.First)
                 .Add((t1, t2, t3) => canSecond, (t1, t2, t3) => WhichLink.Second)
                 .Add((t1, t2, t3) => canThird, (t1, t2, t3) => WhichLink.Third)
@@ -545,8 +545,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         public void ResultChain_ThreeParameters_ParametersUsed()
         {
             var result =
-                Chain
-                    .CreateResult<int, int, int, string>()
+                ChainFactory
+                    .CreateResultBuilder<int, int, int, string>()
                     .Add(
                         (t1, t2, t3) =>
                         {
@@ -576,8 +576,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         public void ResultChain_FourParameters_NoLinks_DoNothing()
         {
             var result =
-                Chain
-                    .CreateResult<int, int, int, int, string>()
+                ChainFactory
+                    .CreateResultBuilder<int, int, int, int, string>()
                     .Build()
                     .Execute(1, 2, 3, 4);
 
@@ -590,8 +590,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         [TestCase(WhichLink.Third, Skip, Skip, Do)]
         public void ResultChain_FourParameters(WhichLink expectedLink, bool canFirst, bool canSecond, bool canThird)
         {
-            var link = Chain
-                .CreateResult<int, int, int, int, WhichLink>()
+            var link = ChainFactory
+                .CreateResultBuilder<int, int, int, int, WhichLink>()
                 .Add((t1, t2, t3, t4) => canFirst, (t1, t2, t3, t4) => WhichLink.First)
                 .Add((t1, t2, t3, t4) => canSecond, (t1, t2, t3, t4) => WhichLink.Second)
                 .Add((t1, t2, t3, t4) => canThird, (t1, t2, t3, t4) => WhichLink.Third)
@@ -605,8 +605,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         public void ResultChain_FourParameters_ParametersUsed()
         {
             var result =
-                Chain
-                    .CreateResult<int, int, int, int, string>()
+                ChainFactory
+                    .CreateResultBuilder<int, int, int, int, string>()
                     .Add(
                         (t1, t2, t3, t4) =>
                         {
@@ -638,8 +638,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         public void ResultChain_FiveParameters_NoLinks_DoNothing()
         {
             var result =
-               Chain
-                   .CreateResult<int, int, int, int, int, string>()
+               ChainFactory
+                   .CreateResultBuilder<int, int, int, int, int, string>()
                    .Build()
                    .Execute(1, 2, 3, 4, 5);
 
@@ -652,8 +652,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         [TestCase(WhichLink.Third, Skip, Skip, Do)]
         public void ResultChain_FiveParameters(WhichLink expectedLink, bool canFirst, bool canSecond, bool canThird)
         {
-            var link = Chain
-                .CreateResult<int, int, int, int, int, WhichLink>()
+            var link = ChainFactory
+                .CreateResultBuilder<int, int, int, int, int, WhichLink>()
                 .Add((t1, t2, t3, t4, t5) => canFirst, (t1, t2, t3, t4, t5) => WhichLink.First)
                 .Add((t1, t2, t3, t4, t5) => canSecond, (t1, t2, t3, t4, t5) => WhichLink.Second)
                 .Add((t1, t2, t3, t4, t5) => canThird, (t1, t2, t3, t4, t5) => WhichLink.Third)
@@ -667,8 +667,8 @@ namespace ShogunLib.Tests.Patterns.ChainOfResponsibility.Integration
         public void ResultChain_FiveParameters_ParametersUsed()
         {
             var result =
-                Chain
-                    .CreateResult<int, int, int, int, int, string>()
+                ChainFactory
+                    .CreateResultBuilder<int, int, int, int, int, string>()
                     .Add(
                         (t1, t2, t3, t4, t5) =>
                         {
