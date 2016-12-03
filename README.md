@@ -1,6 +1,6 @@
 # ShogunLib
 
-[![Build](https://ci.appveyor.com/api/projects/status/3xfkxtnkrts1x06q/branch/master?svg=true)](https://ci.appveyor.com/project/iivchenko/shogunlib) [![NuGet downloads](https://img.shields.io/badge/nuget-v%200.1.3-brightgreen.svg)](https://www.nuget.org/packages/ShogunLib.dll)
+[![Build status](https://ci.appveyor.com/api/projects/status/k4fjujfsp9a6codo?svg=true)](https://ci.appveyor.com/project/iivchenko/shogunlib) [![NuGet downloads](https://img.shields.io/badge/nuget-v%200.1.3-brightgreen.svg)](https://www.nuget.org/packages/ShogunLib.dll)
 
 Set of libraries with some sort of everyday functionality like 
 * [Extension of LINQ](https://github.com/iivchenko/ShogunLib/wiki/LINQ)
