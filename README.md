@@ -10,31 +10,66 @@ Set of libraries with some sort of everyday functionality like
 * [Event extensions](https://github.com/iivchenko/ShogunLib/wiki/Events)
 * [Units convertor](https://github.com/iivchenko/ShogunLib/wiki/Units)
 * [Argument validation](https://github.com/iivchenko/ShogunLib/wiki/Validate)
+* [Patterns](https://github.com/iivchenko/ShogunLib/wiki/Patterns)
+  * [Chain of Responsibility](https://github.com/iivchenko/ShogunLib/wiki/Chain-of-Responsibility)
 * etc.
 
 ```csharp
 public void Process(Report report, string author)
 {
-    report.ValidateNull(nameof(report));
-    author.ValidateStringEmpty(nameof(author));
-
-    report
+	// Validate extensions
+	report.ValidateNull(nameof(report));
+	author.ValidateStringEmpty(nameof(author));
+	
+	// Maybe monad and Events extensions
+	report
 		.ToMaybe()
 		.Bind(x => x.Item)
 		.Bind(x => x.Value)
 		.Do(x => NameChanged.Raise(this, x));
 
-    var unit = 
-    	report
-	      .ToMaybe()
-	      .Bind(x => x.Item)
-	      .Bind(x => x.Length.ToUnit())
-	      .Return();
+	// Maybe monad
+	var unit =
+		report
+			.ToMaybe()
+			.Bind(x => x.Item)
+			.Bind(x => x.Length.ToUnit())
+			.Return();
 
-	Console.WriteLine($"Report size is {unit.Value} ({unit.Name})");
+		Console.WriteLine($"Report size is {unit.Value} ({unit.Name})");
 
-    report.ToMaybe()
-          .Do(x => x.Records.ForEach(y => Console.WriteLine(y.Header)));
+	report
+		.ToMaybe()
+		.Do(x => x.Records.ForEach(y => Console.WriteLine(y.Header)));
+
+	// Chain of Responsibility
+	var log = new Logger();
+
+	var chain =
+		ChainFactory
+            .CreateVoidBuilder<string, string>()
+			.Add
+			(
+				(level, message) => level == "ERROR",
+				(level, message) => log.LogError(message)
+			)
+			.Add
+			(
+				(level, message) => level == "WARN",
+				(level, message) => log.LogWarn(message)
+			)
+			.Add
+			(
+				(level, message) => true, // Last link will handle all unhandled requests
+				(level, message) => log.LogDebug(message)
+			)
+			.Build();
+
+	chain.Execute("DEBUG", "Some DEBUG message");
+	chain.Execute("INFO", "Some DEBUG message");
+	chain.Execute("ERROR", "Some ERROR message");
+	chain.Execute("TRACE", "Some DEBUG message");
+	chain.Execute("WARN", "Some WARN message");
 }
 ```
 
